@@ -1,0 +1,11 @@
+# Direct dependencies. The Windows teaching baseline installs requirements.lock.txt.
+duckdb==1.5.5
+pyarrow==25.0.1
+dask[dataframe,distributed]==2026.8.0
+boto3==1.43.93
+moto[server]==5.2.3
+fastapi==0.141.1
+uvicorn==0.52.4
+scikit-learn==1.9.1
+httpx==0.28.1
+pytest==9.1.1

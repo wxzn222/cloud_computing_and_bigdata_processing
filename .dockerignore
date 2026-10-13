@@ -1,0 +1,10 @@
+.venv*
+.references
+.git
+data
+outputs
+student.json
+*.zip
+wheelhouse
+models
+__pycache__

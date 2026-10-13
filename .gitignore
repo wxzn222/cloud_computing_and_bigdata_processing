@@ -1,0 +1,13 @@
+.venv/
+.references/
+__pycache__/
+.pytest_cache/
+data/
+outputs/
+student.json
+.env
+*.zip
+wheelhouse/
+models/
+.test-tmp-*/
+submissions/
