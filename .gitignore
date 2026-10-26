@@ -7,7 +7,7 @@ outputs/
 student.json
 .env
 *.zip
+!submissions/*.zip
 wheelhouse/
 models/
 .test-tmp-*/
-submissions/

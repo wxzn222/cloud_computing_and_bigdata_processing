@@ -1,0 +1,16 @@
+{
+  "kind": "coursekit.run",
+  "_evidence": {
+    "schema_version": 1,
+    "student_id": "2410311411",
+    "experiment_id": "01",
+    "run_id": "795e796b5fa849a4a83fc5abad552467",
+    "captured_at": "2026-10-20T06:19:26.676849+00:00",
+    "stage": "student_object_roundtrip"
+  },
+  "result": null,
+  "artifacts": [],
+  "exit_code": 0,
+  "stdout": "{\n  \"student_id\": \"2410311411\",\n  \"key\": \"students/2410311411/raw/demo.json\",\n  \"source_sha256\": \"5657a58e4a955dcf741239aed81c7a600ca434c4b6c738557b8683d12b09d3f6\",\n  \"downloaded_sha256\": \"5657a58e4a955dcf741239aed81c7a600ca434c4b6c738557b8683d12b09d3f6\",\n  \"equal\": true\n}\n",
+  "stderr": "127.0.0.1 - - [20/Oct/2026 14:19:31] \"PUT /bdp-student-demo HTTP/1.1\" 200 -\n127.0.0.1 - - [20/Oct/2026 14:19:31] \"PUT /bdp-student-demo/students/2410311411/raw/demo.json HTTP/1.1\" 200 -\n127.0.0.1 - - [20/Oct/2026 14:19:31] \"GET /bdp-student-demo/students/2410311411/raw/demo.json HTTP/1.1\" 200 -\n"
+}

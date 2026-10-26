@@ -1,0 +1,36 @@
+{
+  "kind": "coursekit.run",
+  "_evidence": {
+    "schema_version": 1,
+    "student_id": "2410311411",
+    "experiment_id": "01",
+    "run_id": "34ed93b95c994a1f99563593b5de1f15",
+    "captured_at": "2026-10-20T06:20:33.600949+00:00",
+    "stage": "verify"
+  },
+  "result": {
+    "endpoint": "http://127.0.0.1:56251",
+    "backend": "Moto S3 API emulator; volatile memory, not durable cloud storage",
+    "bucket": "bdp-teaching",
+    "key": "bronze/events/0d93bcd25e28047f804238c220bdb5b1d2dadf328647c07de85ba0104e8e2854.jsonl",
+    "bytes": 3892184,
+    "source_sha256": "0d93bcd25e28047f804238c220bdb5b1d2dadf328647c07de85ba0104e8e2854",
+    "download_sha256": "0d93bcd25e28047f804238c220bdb5b1d2dadf328647c07de85ba0104e8e2854",
+    "hash_matches": true,
+    "version_ids_differ": true
+  },
+  "artifacts": [
+    {
+      "file": "outputs/lab01/storage.json",
+      "sha256": "fccb1b1accb5e3598552c24634225308584618579ca27131e2f1847155b328ec",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "01",
+        "run_id": "34ed93b95c994a1f99563593b5de1f15",
+        "captured_at": "2026-10-20T06:20:33.600949+00:00",
+        "stage": "storage"
+      }
+    }
+  ]
+}

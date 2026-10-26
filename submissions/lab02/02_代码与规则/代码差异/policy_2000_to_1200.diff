@@ -1,0 +1,13 @@
+diff --git "a/.\\02. \346\225\260\346\215\256\346\271\226\344\270\216\350\264\250\351\207\217\345\245\221\347\272\246\\\351\231\204\344\273\266\\student_quality_policy.py" "b/.\\submissions\\lab02\\student_quality_policy.py"
+index 3811d92..a6e0bd1 100644
+--- "a/.\\02. \346\225\260\346\215\256\346\271\226\344\270\216\350\264\250\351\207\217\345\245\221\347\272\246\\\351\231\204\344\273\266\\student_quality_policy.py"	
++++ "b/.\\submissions\\lab02\\student_quality_policy.py"
+@@ -9,7 +9,7 @@ sys.path.insert(0, str(COURSE_ROOT))
+ from coursekit.common import DATA, OUT, write_json
+ from coursekit.evidence import capture_callable
+ 
+-MAX_INPUT_TOKENS = 2000  # 本人将它改为 1200，先预测再运行。
++MAX_INPUT_TOKENS = 1200  # 本人将它改为 1200，先预测再运行。
+ 
+ 
+ def policy(row):

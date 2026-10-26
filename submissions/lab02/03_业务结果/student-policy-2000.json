@@ -1,0 +1,24 @@
+{
+  "max_input_tokens": 2000,
+  "raw_rows": 20102,
+  "valid_unique": 20000,
+  "duplicates": 100,
+  "rejected_by_reason": {
+    "invalid_input_tokens": 1,
+    "invalid_event_time": 1
+  },
+  "input_tokens_sum": 18015640,
+  "probe_errors": {
+    "negative": "invalid_input_tokens",
+    "boolean": "invalid_input_tokens",
+    "naive_time": "non_utc_time"
+  },
+  "_evidence": {
+    "schema_version": 1,
+    "student_id": "2410311411",
+    "experiment_id": "02",
+    "run_id": "1e8f23cce022496591ff4d2b2dff0122",
+    "captured_at": "2026-10-26T07:52:05.048460+00:00",
+    "stage": "student-policy-2000"
+  }
+}

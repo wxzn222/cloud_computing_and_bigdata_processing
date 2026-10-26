@@ -1,0 +1,28 @@
+﻿diff --git "a/.\\01. \344\272\221\347\253\257\346\225\260\346\215\256\346\216\245\345\217\243\344\270\216\345\217\257\345\244\215\347\216\260\347\216\257\345\242\203\\\351\231\204\344\273\266\\student_object_roundtrip.py" "b/.\\submissions\\lab01\\student_object_roundtrip.py"
+index fc7c54f..47b8611 100644
+--- "a/.\\01. \344\272\221\347\253\257\346\225\260\346\215\256\346\216\245\345\217\243\344\270\216\345\217\257\345\244\215\347\216\260\347\216\257\345\242\203\\\351\231\204\344\273\266\\student_object_roundtrip.py"	
++++ "b/.\\submissions\\lab01\\student_object_roundtrip.py"
+@@ -1,4 +1,4 @@
+-"""实验 01 个人练习：修改 make_key，再验证内容与对象地址的区别。"""
++﻿"""实验 01 个人练习：修改 make_key，再验证内容与对象地址的区别。"""
+ import hashlib
+ import json
+ import sys
+@@ -14,7 +14,7 @@ STUDENT_ID = None  # main 从当前课程登记记录读取；个人练习只修
+ 
+ def make_key():
+     # 独立改动：将共享前缀改为含自己学号的前缀，保留文件后缀。
+-    return "shared/raw/demo.json"
++    return "students/2410311411/raw/demo.json"
+ 
+ 
+ def main():
+@@ -23,7 +23,7 @@ def main():
+     import boto3
+     from moto.server import ThreadedMotoServer
+ 
+-    payload = json.dumps({"requests": 3, "tokens": 120}, sort_keys=True).encode("utf-8")
++    payload = json.dumps({"requests": 4, "tokens": 120}, sort_keys=True).encode("utf-8")
+     server = ThreadedMotoServer(ip_address="127.0.0.1", port=0, verbose=False)
+     server.start()
+     try:

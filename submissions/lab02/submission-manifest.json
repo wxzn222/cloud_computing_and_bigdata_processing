@@ -1,0 +1,351 @@
+{
+  "kind": "coursekit.submission",
+  "_evidence": {
+    "schema_version": 1,
+    "student_id": "2410311411",
+    "experiment_id": "02",
+    "run_id": "859f6f88daa2480e9c2e1f8c5f9df915",
+    "captured_at": "2026-10-26T08:17:43.417215+00:00",
+    "stage": "submission"
+  },
+  "report": {
+    "file": "01_实验报告/实验报告_何嘉欣_2410311411.pdf",
+    "sha256": "8eb70f117f754ca8cae938f6e567fcb554add27d5b162a561bf20a730dcb37ca"
+  },
+  "files": [
+    {
+      "file": "01_实验报告/实验报告_何嘉欣_2410311411.docx",
+      "sha256": "5e92e1d5b6f930055004a5cf3b105481b1662b763fb5337771c6730abc171549"
+    },
+    {
+      "file": "01_实验报告/实验报告_何嘉欣_2410311411.pdf",
+      "sha256": "8eb70f117f754ca8cae938f6e567fcb554add27d5b162a561bf20a730dcb37ca"
+    },
+    {
+      "file": "02_代码与规则/代码差异/policy_2000_to_1200.diff",
+      "sha256": "068caec42f7baf2c0bd4cd8ee759b2dfb23a7c3be483b043e7fa9242029b7efb"
+    },
+    {
+      "file": "02_代码与规则/修改前/student_quality_policy.py",
+      "sha256": "a430468658c2f802e003d27b7d20f1e55c21f4ad21a8b362283b3bd8f9307503"
+    },
+    {
+      "file": "02_代码与规则/当前代码/student_quality_policy.py",
+      "sha256": "3e8f7fa0d48598fc378ba918b4f474e3f5f1f552ac8e69e62c1f1c0e8c14ffb8"
+    },
+    {
+      "file": "02_代码与规则/探针/policy_probe.py",
+      "sha256": "f8c98fa4f69be7ab80b1a89ea9d9da656eb2e9514ba13e455c6dddf702535bc8"
+    },
+    {
+      "file": "03_业务结果/quality.json",
+      "sha256": "ba9e8129043fac99b8a6afd5e357f1881e538307bbfd1d6fdb1f6726be803a30"
+    },
+    {
+      "file": "03_业务结果/quarantine.json",
+      "sha256": "edd0e32908a941403e2211c2ddecd5e02839eeb989560614956fb566877464b8"
+    },
+    {
+      "file": "03_业务结果/quarantine.json.identity.json",
+      "sha256": "18fbc3f204e5926bdfcd3cd94e55f592c552aa50914d82d8d057b89a02172e80"
+    },
+    {
+      "file": "03_业务结果/query-plan.txt",
+      "sha256": "b0373203560287997cd46bcece70a65ae386c953c5e2ecd1c3b1024cda20fbd7"
+    },
+    {
+      "file": "03_业务结果/student-policy-1200.json",
+      "sha256": "95af9bd151f4b48510612ed799e99d941d267dd9cbb007f363a16b60ff821182"
+    },
+    {
+      "file": "03_业务结果/student-policy-1200.json.identity.json",
+      "sha256": "c81151349bad361bd99f0fea70731e7f305bb10d568fd468ac081accd37ff663"
+    },
+    {
+      "file": "03_业务结果/student-policy-2000.json",
+      "sha256": "bd3d89dca70cefaaeb1b0c18a1fcefa0104df183e535386170435fd994cb66db"
+    },
+    {
+      "file": "03_业务结果/student-policy-2000.json.identity.json",
+      "sha256": "b5ddcc0acf1231decec289ddb02019f96cffc6d409a95470256cb9b90773fba7"
+    },
+    {
+      "file": "04_数据清单/events.parquet",
+      "sha256": "516b3d78aab91c1487d9a24979eaef514c5acb7309d0d82a6688a762836634dc"
+    },
+    {
+      "file": "04_数据清单/raw.json",
+      "sha256": "cf2bc8df89cf8b607494c55496336cf715576f6ca771a5ae4d5bd2e12289aa96"
+    },
+    {
+      "file": "04_数据清单/service_daily.parquet",
+      "sha256": "654e0aeb835565d09b61f965015b61c3442c78e3cc320ca6e1e25b94e02dfc6e"
+    },
+    {
+      "file": "04_数据清单/silver.json",
+      "sha256": "1dffe071e94a27c1f49c7d6aae7cb827a9ddb4f09f91cbdbb1fe8451ce5f7044"
+    },
+    {
+      "file": "evidence/截图/01-baseline-quality.png",
+      "sha256": "9ade189b8fcd4b6d4a66cce14855acd71ab14b655b295ba43a36fc8427ec6652"
+    },
+    {
+      "file": "evidence/截图/02-gold-totals.png",
+      "sha256": "d239573cbd20230e08aeb239a778f180691e642ca68fd1c9df9c6fde9c39845f"
+    },
+    {
+      "file": "evidence/截图/03-parquet-rowgroups.png",
+      "sha256": "7b96ad43f35b1029057372169f5e32200b11616fe96b79e30be1407b37b08e7f"
+    },
+    {
+      "file": "evidence/截图/04-manifest-hash.png",
+      "sha256": "121025a3836026164b4b3d208add4bfd9c73d2461b2c3da5da13bd805fbd3644"
+    },
+    {
+      "file": "evidence/截图/05-policy-2000.png",
+      "sha256": "3942b68addc1f3fab0318e2b99517e9ed3b4e9b93c2668d109b2ebc9aeacc794"
+    },
+    {
+      "file": "evidence/截图/06-policy-1200.png",
+      "sha256": "07a90b105495522052050da66c6f2d04f0a934a144776dbc3298cf49a93bb71d"
+    },
+    {
+      "file": "evidence/截图/07-contract-probes.png",
+      "sha256": "5c2c569403df7c1f49b025eeb07e778298abc780bffdbafb3c6c31f8711a2c3e"
+    },
+    {
+      "file": "evidence/截图/08-expected-failure.png",
+      "sha256": "665c1d932fdc13d96977c3f4bb9a1965f1b5c818492e8efbd41dd90a0ceb1c82"
+    },
+    {
+      "file": "evidence/截图/09-recovered.png",
+      "sha256": "17931718ba3d4623a1457218dc0a1c79c0e398c3bda67ac275d9ed3380e2a863"
+    },
+    {
+      "file": "evidence/运行记录/032c60ce145e4b5bac22eec26fa5b2af-inspect_gold.html",
+      "sha256": "450ae59c0d7d1ec9ee0aa26ab3bcea73d8456a2c9a21bed93310a125299a4fb4"
+    },
+    {
+      "file": "evidence/运行记录/032c60ce145e4b5bac22eec26fa5b2af-inspect_gold.json",
+      "sha256": "52075868d82be5da560cc10ed2f4c1c3564c1c809c55637c31aa5927af9d6a0c"
+    },
+    {
+      "file": "evidence/运行记录/0a2d4a98c7ff40e8b077a5fc97d6f2cc-student_quality_policy.html",
+      "sha256": "9d9b7a91bc06b3a6b4c89b75c9c16199996628263b42a884314031c2119aca3f"
+    },
+    {
+      "file": "evidence/运行记录/0a2d4a98c7ff40e8b077a5fc97d6f2cc-student_quality_policy.json",
+      "sha256": "614b5b93abdeca396c9893bcccbf7e96bdae96d2cf71cc75617317a4246f6262"
+    },
+    {
+      "file": "evidence/运行记录/16e746cfe24e4a5f95a6eaf282c15e39-recovered.html",
+      "sha256": "1081931d84db63e9110670f5d10d1b1c38a81db0dae9159dd036a92d8732cd3a"
+    },
+    {
+      "file": "evidence/运行记录/16e746cfe24e4a5f95a6eaf282c15e39-recovered.json",
+      "sha256": "ee171ee2ea09df6bba1739703e146faac2ed41b354676add89b82616d4f20554"
+    },
+    {
+      "file": "evidence/运行记录/1e8f23cce022496591ff4d2b2dff0122-student_quality_policy.html",
+      "sha256": "c2534fb60720ca1303ad8203ef647234820e3741be8a04a712f451ea0c3fa8b9"
+    },
+    {
+      "file": "evidence/运行记录/1e8f23cce022496591ff4d2b2dff0122-student_quality_policy.json",
+      "sha256": "c7115776fce013a73c271cddfc2d5c3cd68318a205cf66b14dad43ce32984266"
+    },
+    {
+      "file": "evidence/运行记录/5be251e845014e62bee30e5dbbb99ea7-probe-03.html",
+      "sha256": "af118611e9c1e8037be30fb22a89d22c6d1d6cd67f0a3fe190d2772fc9542696"
+    },
+    {
+      "file": "evidence/运行记录/5be251e845014e62bee30e5dbbb99ea7-probe-03.json",
+      "sha256": "32792caa8558527fdcc42bc71c09853d959bc04ab8cea38a36b3b50e1104a0a9"
+    },
+    {
+      "file": "evidence/运行记录/ac8b59db03da425c87bfc8ddb65fb408-probe-05.html",
+      "sha256": "38e82b8a4e801a471a5d22f7cbf9fa04fcd2c5e65da9abab12b8085056a643f0"
+    },
+    {
+      "file": "evidence/运行记录/ac8b59db03da425c87bfc8ddb65fb408-probe-05.json",
+      "sha256": "f80d15485dff59b07eb835ef093d2a859e7f50f21909b85e6cd5d22840dcf976"
+    },
+    {
+      "file": "evidence/运行记录/b54b88afad3b495f8310601935a4151b-expected-failure.html",
+      "sha256": "34de84a2512b64cf5d80f4972f6b39187f0b958c1b38dac9f6a823f7c9438696"
+    },
+    {
+      "file": "evidence/运行记录/b54b88afad3b495f8310601935a4151b-expected-failure.json",
+      "sha256": "aab6b99b397902fad02534fc3933eca5e539d8b6cb1bf4d586ac8e2f29604a4f"
+    },
+    {
+      "file": "evidence/运行记录/e6a3a1ca90d1478688541f770a936ddf-verify.html",
+      "sha256": "a891f70b58066b219b9da6ec265cac2836d6a669e3eaf5a291d39f70c2cc8c28"
+    },
+    {
+      "file": "evidence/运行记录/e6a3a1ca90d1478688541f770a936ddf-verify.json",
+      "sha256": "abcf28784f8a1fb25004bb1a5811743795b50b35f3106c7f0a31044e3a82616f"
+    },
+    {
+      "file": "evidence/运行记录/f645738912114475b6f351408c814f53-probe-01.html",
+      "sha256": "c745f518fda69706c03e56e5f7d37e5a9e4220ffa07985aea0ff20035b75fc82"
+    },
+    {
+      "file": "evidence/运行记录/f645738912114475b6f351408c814f53-probe-01.json",
+      "sha256": "b54ad6a0b21bce814106ac7ecccdeb02637235f982a666cdcf66ba741c3f9747"
+    },
+    {
+      "file": "文件说明.txt",
+      "sha256": "3d1e8db0a486a4c921b00c3b4da95829176656e1a95aa47b85708ecf8f8330f7"
+    }
+  ],
+  "runs": [
+    {
+      "file": "evidence/运行记录/032c60ce145e4b5bac22eec26fa5b2af-inspect_gold.json",
+      "sha256": "52075868d82be5da560cc10ed2f4c1c3564c1c809c55637c31aa5927af9d6a0c",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "02",
+        "run_id": "032c60ce145e4b5bac22eec26fa5b2af",
+        "captured_at": "2026-10-26T07:51:42.864878+00:00",
+        "stage": "inspect_gold"
+      }
+    },
+    {
+      "file": "evidence/运行记录/0a2d4a98c7ff40e8b077a5fc97d6f2cc-student_quality_policy.json",
+      "sha256": "614b5b93abdeca396c9893bcccbf7e96bdae96d2cf71cc75617317a4246f6262",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "02",
+        "run_id": "0a2d4a98c7ff40e8b077a5fc97d6f2cc",
+        "captured_at": "2026-10-26T07:52:15.704624+00:00",
+        "stage": "student_quality_policy"
+      }
+    },
+    {
+      "file": "evidence/运行记录/16e746cfe24e4a5f95a6eaf282c15e39-recovered.json",
+      "sha256": "ee171ee2ea09df6bba1739703e146faac2ed41b354676add89b82616d4f20554",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "02",
+        "run_id": "16e746cfe24e4a5f95a6eaf282c15e39",
+        "captured_at": "2026-10-26T07:53:41.341887+00:00",
+        "stage": "recovered"
+      }
+    },
+    {
+      "file": "evidence/运行记录/1e8f23cce022496591ff4d2b2dff0122-student_quality_policy.json",
+      "sha256": "c7115776fce013a73c271cddfc2d5c3cd68318a205cf66b14dad43ce32984266",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "02",
+        "run_id": "1e8f23cce022496591ff4d2b2dff0122",
+        "captured_at": "2026-10-26T07:52:05.048460+00:00",
+        "stage": "student_quality_policy"
+      }
+    },
+    {
+      "file": "evidence/运行记录/5be251e845014e62bee30e5dbbb99ea7-probe-03.json",
+      "sha256": "32792caa8558527fdcc42bc71c09853d959bc04ab8cea38a36b3b50e1104a0a9",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "02",
+        "run_id": "5be251e845014e62bee30e5dbbb99ea7",
+        "captured_at": "2026-10-26T07:53:27.842723+00:00",
+        "stage": "probe-03"
+      }
+    },
+    {
+      "file": "evidence/运行记录/ac8b59db03da425c87bfc8ddb65fb408-probe-05.json",
+      "sha256": "f80d15485dff59b07eb835ef093d2a859e7f50f21909b85e6cd5d22840dcf976",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "02",
+        "run_id": "ac8b59db03da425c87bfc8ddb65fb408",
+        "captured_at": "2026-10-26T07:51:54.595803+00:00",
+        "stage": "probe-05"
+      }
+    },
+    {
+      "file": "evidence/运行记录/b54b88afad3b495f8310601935a4151b-expected-failure.json",
+      "sha256": "aab6b99b397902fad02534fc3933eca5e539d8b6cb1bf4d586ac8e2f29604a4f",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "02",
+        "run_id": "b54b88afad3b495f8310601935a4151b",
+        "captured_at": "2026-10-26T07:53:34.352458+00:00",
+        "stage": "expected-failure"
+      }
+    },
+    {
+      "file": "evidence/运行记录/e6a3a1ca90d1478688541f770a936ddf-verify.json",
+      "sha256": "abcf28784f8a1fb25004bb1a5811743795b50b35f3106c7f0a31044e3a82616f",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "02",
+        "run_id": "e6a3a1ca90d1478688541f770a936ddf",
+        "captured_at": "2026-10-26T07:51:09.099159+00:00",
+        "stage": "verify"
+      }
+    },
+    {
+      "file": "evidence/运行记录/f645738912114475b6f351408c814f53-probe-01.json",
+      "sha256": "b54ad6a0b21bce814106ac7ecccdeb02637235f982a666cdcf66ba741c3f9747",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "02",
+        "run_id": "f645738912114475b6f351408c814f53",
+        "captured_at": "2026-10-26T07:51:49.263270+00:00",
+        "stage": "probe-01"
+      }
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "evidence/截图/01-baseline-quality.png",
+      "sha256": "9ade189b8fcd4b6d4a66cce14855acd71ab14b655b295ba43a36fc8427ec6652"
+    },
+    {
+      "file": "evidence/截图/02-gold-totals.png",
+      "sha256": "d239573cbd20230e08aeb239a778f180691e642ca68fd1c9df9c6fde9c39845f"
+    },
+    {
+      "file": "evidence/截图/03-parquet-rowgroups.png",
+      "sha256": "7b96ad43f35b1029057372169f5e32200b11616fe96b79e30be1407b37b08e7f"
+    },
+    {
+      "file": "evidence/截图/04-manifest-hash.png",
+      "sha256": "121025a3836026164b4b3d208add4bfd9c73d2461b2c3da5da13bd805fbd3644"
+    },
+    {
+      "file": "evidence/截图/05-policy-2000.png",
+      "sha256": "3942b68addc1f3fab0318e2b99517e9ed3b4e9b93c2668d109b2ebc9aeacc794"
+    },
+    {
+      "file": "evidence/截图/06-policy-1200.png",
+      "sha256": "07a90b105495522052050da66c6f2d04f0a934a144776dbc3298cf49a93bb71d"
+    },
+    {
+      "file": "evidence/截图/07-contract-probes.png",
+      "sha256": "5c2c569403df7c1f49b025eeb07e778298abc780bffdbafb3c6c31f8711a2c3e"
+    },
+    {
+      "file": "evidence/截图/08-expected-failure.png",
+      "sha256": "665c1d932fdc13d96977c3f4bb9a1965f1b5c818492e8efbd41dd90a0ceb1c82"
+    },
+    {
+      "file": "evidence/截图/09-recovered.png",
+      "sha256": "17931718ba3d4623a1457218dc0a1c79c0e398c3bda67ac275d9ed3380e2a863"
+    }
+  ],
+  "status": "pending_teacher_screenshot_review",
+  "note": "提交清单仅用于材料预检查，须经授课老师逐张复核后方可验收。"
+}

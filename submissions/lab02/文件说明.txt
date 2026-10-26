@@ -1,0 +1,24 @@
+实验二 数据湖与质量契约
+学号：2410311411
+姓名：何嘉欣
+
+01_实验报告
+  实验报告 Word 与 PDF。PDF 为最终提交版。
+
+02_代码与规则
+  修改前：上限 2000 的个人政策源码。
+  当前代码：上限 1200 的个人政策源码。
+  探针：布尔值、数字字符串、整数、负数和无时区时间检查。
+  代码差异：2000 改为 1200 的源码差异。
+
+03_业务结果
+  quality.json、quarantine.json、query-plan.txt。
+  student-policy-2000.json、student-policy-1200.json。
+  原始结果旁的 *.identity.json 为运行身份旁证。
+
+04_数据清单
+  raw.json、silver.json、events.parquet、service_daily.parquet。
+
+evidence
+  截图：9 张评分截图，均原生显示学号、实验号 02、run_id 和实际结果。
+  运行记录：与截图对应的 JSON 和同名 HTML。

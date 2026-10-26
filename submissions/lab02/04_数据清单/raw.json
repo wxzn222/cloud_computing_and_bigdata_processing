@@ -1,0 +1,8 @@
+{
+  "valid_unique": 20000,
+  "duplicates": 100,
+  "invalid": 2,
+  "raw_rows": 20102,
+  "sha256": "0d93bcd25e28047f804238c220bdb5b1d2dadf328647c07de85ba0104e8e2854",
+  "seed": 42
+}

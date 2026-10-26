@@ -1,0 +1,19 @@
+﻿diff --git "a/.\\01. \344\272\221\347\253\257\346\225\260\346\215\256\346\216\245\345\217\243\344\270\216\345\217\257\345\244\215\347\216\260\347\216\257\345\242\203\\\351\231\204\344\273\266\\student_object_roundtrip.py" "b/.\\submissions\\lab01\\changes\\student_object_roundtrip_key_changed.py"
+index fc7c54f..8b65e8c 100644
+--- "a/.\\01. \344\272\221\347\253\257\346\225\260\346\215\256\346\216\245\345\217\243\344\270\216\345\217\257\345\244\215\347\216\260\347\216\257\345\242\203\\\351\231\204\344\273\266\\student_object_roundtrip.py"	
++++ "b/.\\submissions\\lab01\\changes\\student_object_roundtrip_key_changed.py"
+@@ -1,4 +1,4 @@
+-"""实验 01 个人练习：修改 make_key，再验证内容与对象地址的区别。"""
++﻿"""实验 01 个人练习：修改 make_key，再验证内容与对象地址的区别。"""
+ import hashlib
+ import json
+ import sys
+@@ -14,7 +14,7 @@ STUDENT_ID = None  # main 从当前课程登记记录读取；个人练习只修
+ 
+ def make_key():
+     # 独立改动：将共享前缀改为含自己学号的前缀，保留文件后缀。
+-    return "shared/raw/demo.json"
++    return "students/2410311411/raw/demo.json"
+ 
+ 
+ def main():

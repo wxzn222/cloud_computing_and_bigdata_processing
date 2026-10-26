@@ -1,0 +1,22 @@
+{
+  "kind": "coursekit.run",
+  "_evidence": {
+    "schema_version": 1,
+    "student_id": "2410311411",
+    "experiment_id": "02",
+    "run_id": "b54b88afad3b495f8310601935a4151b",
+    "captured_at": "2026-10-26T07:53:34.352458+00:00",
+    "stage": "expected-failure"
+  },
+  "result": null,
+  "artifacts": [],
+  "command": [
+    ".\\.venv\\Scripts\\python.exe",
+    ".\\submissions\\lab02\\policy_probe.py",
+    "string",
+    "accept"
+  ],
+  "exit_code": 1,
+  "stdout": "{\n  \"case\": \"string\",\n  \"input_tokens\": \"100\",\n  \"reason\": \"invalid_input_tokens\"\n}\n",
+  "stderr": "EXPECTED_ACCEPT_BUT_GOT_invalid_input_tokens\n"
+}

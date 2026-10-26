@@ -1,0 +1,21 @@
+{
+  "kind": "coursekit.run",
+  "_evidence": {
+    "schema_version": 1,
+    "student_id": "2410311411",
+    "experiment_id": "02",
+    "run_id": "5be251e845014e62bee30e5dbbb99ea7",
+    "captured_at": "2026-10-26T07:53:27.842723+00:00",
+    "stage": "probe-03"
+  },
+  "result": null,
+  "artifacts": [],
+  "command": [
+    ".\\.venv\\Scripts\\python.exe",
+    ".\\submissions\\lab02\\policy_probe.py",
+    "all"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"boolean\": \"invalid_input_tokens\",\n  \"string\": \"invalid_input_tokens\",\n  \"integer\": \"accepted\",\n  \"negative\": \"invalid_input_tokens\",\n  \"naive_time\": \"non_utc_time\"\n}\n",
+  "stderr": ""
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "coursekit.run",
+  "_evidence": {
+    "schema_version": 1,
+    "student_id": "2410311411",
+    "experiment_id": "01",
+    "run_id": "1b1f4b877db64afb9a8c86cf0b27f906",
+    "captured_at": "2026-10-20T06:19:42.403455+00:00",
+    "stage": "expected-failure"
+  },
+  "result": null,
+  "artifacts": [],
+  "command": [
+    ".\\.venv\\Scripts\\python.exe",
+    "-m",
+    "coursekit",
+    "lab01",
+    "--endpoint",
+    "http://127.0.0.1:1"
+  ],
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "{\n  \"passed\": false,\n  \"error\": \"EndpointConnectionError: Could not connect to the endpoint URL: \\\"http://127.0.0.1:1/\\\"\",\n  \"_evidence\": {\n    \"schema_version\": 1,\n    \"student_id\": \"2410311411\",\n    \"experiment_id\": \"01\",\n    \"run_id\": \"8f7bab6faab1429c97e961be0278ab37\",\n    \"captured_at\": \"2026-10-20T06:19:44.301314+00:00\",\n    \"stage\": \"failed-lab01\"\n  },\n  \"evidence_json\": \"D:\\\\云计算与大数据处理\\\\reference-BDP\\\\outputs\\\\lab01\\\\evidence\\\\8f7bab6faab1429c97e961be0278ab37-failed-lab01.json\",\n  \"evidence_html\": \"D:\\\\云计算与大数据处理\\\\reference-BDP\\\\outputs\\\\lab01\\\\evidence\\\\8f7bab6faab1429c97e961be0278ab37-failed-lab01.html\"\n}\n"
+}

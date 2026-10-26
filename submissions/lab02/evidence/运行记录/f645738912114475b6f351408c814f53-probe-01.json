@@ -1,0 +1,21 @@
+{
+  "kind": "coursekit.run",
+  "_evidence": {
+    "schema_version": 1,
+    "student_id": "2410311411",
+    "experiment_id": "02",
+    "run_id": "f645738912114475b6f351408c814f53",
+    "captured_at": "2026-10-26T07:51:49.263270+00:00",
+    "stage": "probe-01"
+  },
+  "result": null,
+  "artifacts": [],
+  "command": [
+    ".\\.venv\\Scripts\\python.exe",
+    "-c",
+    "import pyarrow.parquet as p; f=p.ParquetFile('data/silver/events.parquet'); print(f.schema); print('rows=',f.metadata.num_rows,'row_groups=',f.num_row_groups)"
+  ],
+  "exit_code": 0,
+  "stdout": "<pyarrow._parquet.ParquetSchema object at 0x000002743C4176C0>\nrequired group field_id=-1 schema {\n  optional binary field_id=-1 event_id (String);\n  optional binary field_id=-1 event_time (String);\n  optional binary field_id=-1 service (String);\n  optional binary field_id=-1 model (String);\n  optional int64 field_id=-1 input_tokens;\n  optional int64 field_id=-1 output_tokens;\n  optional int64 field_id=-1 latency_ms;\n  optional binary field_id=-1 status (String);\n}\n\nrows= 20000 row_groups= 5\n",
+  "stderr": ""
+}

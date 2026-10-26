@@ -1,0 +1,22 @@
+{
+  "kind": "coursekit.run",
+  "_evidence": {
+    "schema_version": 1,
+    "student_id": "2410311411",
+    "experiment_id": "02",
+    "run_id": "16e746cfe24e4a5f95a6eaf282c15e39",
+    "captured_at": "2026-10-26T07:53:41.341887+00:00",
+    "stage": "recovered"
+  },
+  "result": null,
+  "artifacts": [],
+  "command": [
+    ".\\.venv\\Scripts\\python.exe",
+    ".\\submissions\\lab02\\policy_probe.py",
+    "integer",
+    "accept"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"case\": \"integer\",\n  \"input_tokens\": 100,\n  \"reason\": \"accepted\"\n}\n",
+  "stderr": ""
+}

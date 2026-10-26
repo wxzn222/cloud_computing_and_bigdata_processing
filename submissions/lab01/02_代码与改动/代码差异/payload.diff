@@ -1,0 +1,13 @@
+﻿diff --git "a/.\\submissions\\lab01\\changes\\student_object_roundtrip_key_changed.py" "b/.\\submissions\\lab01\\changes\\student_object_roundtrip_payload_changed.py"
+index 8b65e8c..47b8611 100644
+--- "a/.\\submissions\\lab01\\changes\\student_object_roundtrip_key_changed.py"
++++ "b/.\\submissions\\lab01\\changes\\student_object_roundtrip_payload_changed.py"
+@@ -23,7 +23,7 @@ def main():
+     import boto3
+     from moto.server import ThreadedMotoServer
+ 
+-    payload = json.dumps({"requests": 3, "tokens": 120}, sort_keys=True).encode("utf-8")
++    payload = json.dumps({"requests": 4, "tokens": 120}, sort_keys=True).encode("utf-8")
+     server = ThreadedMotoServer(ip_address="127.0.0.1", port=0, verbose=False)
+     server.start()
+     try:

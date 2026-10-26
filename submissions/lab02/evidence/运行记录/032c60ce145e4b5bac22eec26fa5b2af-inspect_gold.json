@@ -1,0 +1,16 @@
+{
+  "kind": "coursekit.run",
+  "_evidence": {
+    "schema_version": 1,
+    "student_id": "2410311411",
+    "experiment_id": "02",
+    "run_id": "032c60ce145e4b5bac22eec26fa5b2af",
+    "captured_at": "2026-10-26T07:51:42.864878+00:00",
+    "stage": "inspect_gold"
+  },
+  "result": null,
+  "artifacts": [],
+  "exit_code": 0,
+  "stdout": "       day   service  requests  input_tokens  output_tokens\n2026-03-01 assistant     12142      10943399        3743595\n2026-03-01     batch      1722       1542888         526892\n2026-03-01    search      3416       3066824        1043954\n2026-03-02 assistant      1866       1688451         566434\n2026-03-02     batch       301        273679          89623\n2026-03-02    search       553        500399         175364\n{'silver_totals': (20000, 18015640, 6145862), 'gold_totals': (20000, 18015640, 6145862), 'totals_match': True}\n",
+  "stderr": ""
+}

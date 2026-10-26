@@ -1,0 +1,21 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>学号 2410311411 · 实验/项目 02</title><style>body{margin:0;font:16px/1.6 sans-serif;background:#f4f6f8;color:#142235}header{position:sticky;top:0;background:#142e50;color:white;padding:18px 24px;overflow-wrap:anywhere;z-index:2}header strong{font-size:24px}header small{display:block}main{padding:20px 24px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:white;padding:20px;border:1px solid #cbd5e1}@media print{header{position:fixed;top:0}main{padding-top:100px}}</style><header><strong>学号 2410311411 · 实验/项目 02</strong><small>run_id: f645738912114475b6f351408c814f53 · 2026-10-26T07:51:49.263270+00:00 · probe-01</small></header><main><p>本页展示本次运行的原始记录。截图必须完整保留顶部学号、编号、run_id和相关结果。该标识用于证据关联；原创性还须结合代码差异和现场验收。</p><pre>{
+  &quot;kind&quot;: &quot;coursekit.run&quot;,
+  &quot;_evidence&quot;: {
+    &quot;schema_version&quot;: 1,
+    &quot;student_id&quot;: &quot;2410311411&quot;,
+    &quot;experiment_id&quot;: &quot;02&quot;,
+    &quot;run_id&quot;: &quot;f645738912114475b6f351408c814f53&quot;,
+    &quot;captured_at&quot;: &quot;2026-10-26T07:51:49.263270+00:00&quot;,
+    &quot;stage&quot;: &quot;probe-01&quot;
+  },
+  &quot;result&quot;: null,
+  &quot;artifacts&quot;: [],
+  &quot;command&quot;: [
+    &quot;.\\.venv\\Scripts\\python.exe&quot;,
+    &quot;-c&quot;,
+    &quot;import pyarrow.parquet as p; f=p.ParquetFile(&#x27;data/silver/events.parquet&#x27;); print(f.schema); print(&#x27;rows=&#x27;,f.metadata.num_rows,&#x27;row_groups=&#x27;,f.num_row_groups)&quot;
+  ],
+  &quot;exit_code&quot;: 0,
+  &quot;stdout&quot;: &quot;&lt;pyarrow._parquet.ParquetSchema object at 0x000002743C4176C0&gt;\nrequired group field_id=-1 schema {\n  optional binary field_id=-1 event_id (String);\n  optional binary field_id=-1 event_time (String);\n  optional binary field_id=-1 service (String);\n  optional binary field_id=-1 model (String);\n  optional int64 field_id=-1 input_tokens;\n  optional int64 field_id=-1 output_tokens;\n  optional int64 field_id=-1 latency_ms;\n  optional binary field_id=-1 status (String);\n}\n\nrows= 20000 row_groups= 5\n&quot;,
+  &quot;stderr&quot;: &quot;&quot;
+}</pre></main></html>

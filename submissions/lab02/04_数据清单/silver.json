@@ -1,0 +1,9 @@
+{
+  "source_sha256": "0d93bcd25e28047f804238c220bdb5b1d2dadf328647c07de85ba0104e8e2854",
+  "silver_sha256": "516b3d78aab91c1487d9a24979eaef514c5acb7309d0d82a6688a762836634dc",
+  "rows": 20000,
+  "schema": "event_id: string\nevent_time: string\nservice: string\nmodel: string\ninput_tokens: int64\noutput_tokens: int64\nlatency_ms: int64\nstatus: string",
+  "contract_version": 2,
+  "gold_sha256": "654e0aeb835565d09b61f965015b61c3442c78e3cc320ca6e1e25b94e02dfc6e",
+  "time_policy": "parse accepted UTC ISO timestamps and store canonical datetime.isoformat()"
+}

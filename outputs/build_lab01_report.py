@@ -1,0 +1,378 @@
+from pathlib import Path
+from docx import Document
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.enum.table import WD_TABLE_ALIGNMENT, WD_CELL_VERTICAL_ALIGNMENT
+from docx.shared import Inches, Pt, RGBColor
+from docx.oxml import OxmlElement
+from docx.oxml.ns import qn
+
+ROOT = Path.cwd()
+TEMPLATE = next(Path('..').glob('*.docx'))
+OUTPUT = ROOT / 'submissions/lab01/01_实验报告/实验报告_何嘉欣_2410311411.docx'
+DOCX_OUTPUTS = ROOT / 'outputs/lab01/docx'
+
+doc = Document(str(TEMPLATE))
+doc.core_properties.title = '云计算与大数据处理实验报告：实验一 云端数据接口与可复现环境'
+doc.core_properties.author = '何嘉欣'
+doc.core_properties.subject = '实验一 云端数据接口与可复现环境'
+
+# Fill the existing cover table without changing its layout.
+cover_values = {
+    '实验名称': '实验一　云端数据接口与可复现环境',
+    '实验日期': '2026年10月21日',
+    '专业': '计算机科学与技术',
+    '班级': '24计科4',
+    '学号': '2410311411',
+    '姓名': '何嘉欣',
+    '指导教师': '刘锦行',
+}
+table = doc.tables[0]
+for row in table.rows:
+    key = row.cells[0].text.strip()
+    if key in cover_values:
+        cell = row.cells[1]
+        cell.text = ''
+        p = cell.paragraphs[0]
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        run = p.add_run(cover_values[key])
+        run.font.name = '宋体'
+        run._element.get_or_add_rPr().rFonts.set(qn('w:eastAsia'), '宋体')
+        run.font.size = Pt(12)
+        run.font.bold = False
+        cell.vertical_alignment = WD_CELL_VERTICAL_ALIGNMENT.CENTER
+
+# Common document styles.
+normal = doc.styles['Normal']
+normal.font.name = '宋体'
+normal._element.rPr.rFonts.set(qn('w:eastAsia'), '宋体')
+normal.font.size = Pt(10.5)
+normal.paragraph_format.line_spacing = 1.5
+normal.paragraph_format.space_after = Pt(4)
+
+# The supplied cover template intentionally contains only basic styles.
+
+
+def set_run_font(run, name='宋体', size=10.5, bold=False, color=None):
+    run.font.name = name
+    run._element.get_or_add_rPr().rFonts.set(qn('w:eastAsia'), name)
+    run.font.size = Pt(size)
+    run.font.bold = bold
+    if color:
+        run.font.color.rgb = RGBColor.from_string(color)
+
+
+def para(text='', bold=False, size=10.5, align=None, name='宋体', space_after=4, first_line=True):
+    p = doc.add_paragraph()
+    p.alignment = align if align is not None else WD_ALIGN_PARAGRAPH.LEFT
+    p.paragraph_format.space_after = Pt(space_after)
+    if first_line:
+        p.paragraph_format.first_line_indent = Pt(size * 2)
+    if text:
+        run = p.add_run(text)
+        set_run_font(run, name, size, bold)
+    return p
+
+
+def heading(text, level=1):
+    p = doc.add_paragraph()
+    p.paragraph_format.keep_with_next = True
+    p.paragraph_format.space_before = Pt(10 if level == 1 else 8)
+    p.paragraph_format.space_after = Pt(6)
+    run = p.add_run(text)
+    size = {1: 16, 2: 13, 3: 11.5}[level]
+    set_run_font(run, '黑体', size, True, '1F3864' if level < 3 else '333333')
+    return p
+
+
+def bullet(text):
+    p = doc.add_paragraph()
+    p.paragraph_format.left_indent = Inches(0.42)
+    p.paragraph_format.first_line_indent = Inches(-0.2)
+    p.paragraph_format.space_after = Pt(2)
+    run = p.add_run('• ' + text)
+    set_run_font(run, '宋体', 10.5)
+    return p
+
+
+def shade(cell, fill):
+    tc_pr = cell._tc.get_or_add_tcPr()
+    shd = OxmlElement('w:shd')
+    shd.set(qn('w:fill'), fill)
+    tc_pr.insert_element_before(shd, 'w:noWrap', 'w:tcMar', 'w:textDirection',
+                                'w:tcFitText', 'w:vAlign', 'w:hideMark')
+
+
+def set_table_borders(table):
+    tbl_pr = table._tbl.tblPr
+    borders = OxmlElement('w:tblBorders')
+    for edge in ('top', 'left', 'bottom', 'right', 'insideH', 'insideV'):
+        el = OxmlElement(f'w:{edge}')
+        el.set(qn('w:val'), 'single')
+        el.set(qn('w:sz'), '4')
+        el.set(qn('w:space'), '0')
+        el.set(qn('w:color'), '808080')
+        borders.append(el)
+    tbl_pr.insert_element_before(borders, 'w:shd', 'w:tblLayout', 'w:tblCellMar',
+                                 'w:tblLook', 'w:tblCaption', 'w:tblDescription')
+
+
+def add_table(headers, rows, widths=None, font_size=9):
+    t = doc.add_table(rows=1, cols=len(headers))
+    t.style = 'Normal Table'
+    set_table_borders(t)
+    t.alignment = WD_TABLE_ALIGNMENT.CENTER
+    t.autofit = False
+    t.allow_autofit = False
+    hdr = t.rows[0].cells
+    for i, text in enumerate(headers):
+        hdr[i].text = ''
+        p = hdr[i].paragraphs[0]
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        run = p.add_run(str(text))
+        set_run_font(run, '黑体', font_size, True)
+        shade(hdr[i], 'D9E2F3')
+        hdr[i].vertical_alignment = WD_CELL_VERTICAL_ALIGNMENT.CENTER
+    for row_values in rows:
+        cells = t.add_row().cells
+        for i, value in enumerate(row_values):
+            cells[i].text = ''
+            p = cells[i].paragraphs[0]
+            p.paragraph_format.space_after = Pt(0)
+            run = p.add_run(str(value))
+            set_run_font(run, '宋体', font_size)
+            cells[i].vertical_alignment = WD_CELL_VERTICAL_ALIGNMENT.CENTER
+    if widths:
+        for i, width in enumerate(widths):
+            t.columns[i].width = Inches(width)
+        for row in t.rows:
+            tr_pr = row._tr.get_or_add_trPr()
+            tr_pr.append(OxmlElement('w:cantSplit'))
+            for i, width in enumerate(widths):
+                row.cells[i].width = Inches(width)
+    doc.add_paragraph().paragraph_format.space_after = Pt(0)
+    return t
+
+
+def code_block(text):
+    p = doc.add_paragraph()
+    p.paragraph_format.left_indent = Inches(0.25)
+    p.paragraph_format.right_indent = Inches(0.15)
+    p.paragraph_format.space_before = Pt(3)
+    p.paragraph_format.space_after = Pt(5)
+    p.paragraph_format.line_spacing = 1.0
+    lines = text.splitlines()
+    for i, line in enumerate(lines):
+        run = p.add_run(line)
+        set_run_font(run, 'Consolas', 8.5)
+        if i < len(lines) - 1:
+            run.add_break()
+
+
+def image_with_caption(filename, caption, width=5.45):
+    p = doc.add_paragraph()
+    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p.paragraph_format.space_before = Pt(6)
+    p.paragraph_format.space_after = Pt(2)
+    p.add_run().add_picture(str(ROOT / 'submissions/lab01/evidence/截图' / filename), width=Inches(width))
+    cap = doc.add_paragraph()
+    cap.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    cap.paragraph_format.space_after = Pt(8)
+    run = cap.add_run(caption)
+    set_run_font(run, '宋体', 9, False, '555555')
+
+
+# Remove the template's empty cover-trailing paragraphs, including its page break,
+# then start the body page directly from the first body heading.
+while doc.paragraphs and not doc.paragraphs[-1].text.strip():
+    element = doc.paragraphs[-1]._element
+    element.getparent().remove(element)
+p = doc.add_paragraph()
+p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+p.paragraph_format.page_break_before = True
+run = p.add_run('实验一　云端数据接口与可复现环境')
+set_run_font(run, '黑体', 18, True, '1F3864')
+p.paragraph_format.space_after = Pt(12)
+
+heading('一、实验目的', 1)
+para('本实验使用本机 Moto 提供的 S3 HTTP 模拟服务，完成合成服务事件数据的“生成—保存—上传—下载—哈希核对”链路，重点区分三个层次：网络请求是否成功、上传与下载的文件内容是否逐字节一致、文件中的业务数据是否满足质量规则。')
+para('通过个人对象键改动和 payload 改动，理解对象键与内容摘要之间的关系，并通过无效 endpoint 的故障与恢复，区分连接问题、数据问题和业务问题。')
+
+heading('二、实验环境', 1)
+add_table(['项目', '实测值'], [
+    ['操作系统', 'Windows 11'],
+    ['Python', '3.12.13'],
+    ['项目解释器', r'D:\云计算与大数据处理\reference-BDP\.venv\Scripts\python.exe'],
+    ['工作目录', r'D:\云计算与大数据处理\reference-BDP'],
+    ['DuckDB / PyArrow', '1.5.5 / 25.0.1'],
+    ['Dask / distributed', '2026.8.0 / 2026.8.0'],
+    ['Moto / boto3', '5.2.3 / 1.43.93'],
+    ['FastAPI', '0.141.1'],
+    ['依赖检查', 'pip check：No broken requirements found.，退出码 0'],
+], widths=[1.3, 4.1])
+para('环境运行证据：run_id = 8a813bc368a34c959cca8a326e937ab4，stage 为 environment。原始数据共 20,102 行、3,892,184 字节。')
+image_with_caption('01-environment.png', '图 1　实验环境与原始数据检查（学号、实验号、run_id 与结果同屏）', 5.25)
+
+heading('三、实验原理与数据', 1)
+heading('3.1 对象存储与文件系统的区别', 2)
+para('对象存储按“桶 + 对象键”定位完整对象。对象键中即使包含“/”，也只是键名的一部分，不等同于传统文件系统的目录，也不支持只修改对象中的某一行。本实验通过 boto3 的 put_object() 和 get_object() 完成真实 HTTP 往返。')
+code_block('固定随机种子生成合成事件\n→ 保存到 data/raw/events.jsonl\n→ 通过 S3 API 上传到 Moto\n→ 从 Moto 下载到 outputs/lab01/downloaded-events.jsonl\n→ 比较原始文件与下载文件的 SHA-256')
+heading('3.2 原始数据组成', 2)
+para('data/raw/events.jsonl 是 JSONL 文件，每行是一条 JSON 事件，主要包括 event_id、event_time、service、model、input_tokens、output_tokens、latency_ms 和 status 字段。')
+add_table(['类别', '行数'], [
+    ['合法且 event_id 唯一', '20,000'],
+    ['重复事件', '100'],
+    ['非法事件', '2'],
+    ['原始总行数', '20,102'],
+], widths=[2.8, 2.4])
+para('第一行样例：')
+code_block('{"event_id": "evt-00000000", "event_time": "2026-03-01T00:00:00+00:00", "service": "assistant",\n "model": "small", "input_tokens": 1538, "output_tokens": 291, "latency_ms": 1083, "status": "error"}')
+para('原始文件 SHA-256 为：0d93bcd25e28047f804238c220bdb5b1d2dadf328647c07de85ba0104e8e2854。本实验只验证文件经过对象接口后字节是否一致，不负责清洗重复行和非法行；这些问题留给实验 02 的质量契约处理。')
+
+heading('四、运行前预测', 1)
+add_table(['预测', '运行前理由', '实测结果', '结论'], [
+    ['同一内容换对象键后 SHA-256 不变', 'SHA-256 计算对象内容字节，对象键不参与摘要计算', '基线与含学号键均为 23c0…f0e8', '预测正确'],
+    ['上传成功不代表 input_tokens=-1 合法', '上传接口只负责传输字节，不负责业务字段范围校验', '存在非法事件但仍上传、下载成功', '预测正确'],
+    ['修改 payload 数值会改变摘要', 'payload 字节变化后，摘要应改变', 'requests 3→4 后为 5657…d3f6', '预测正确'],
+    ['连接错误地址会失败，但不改变本地数据', '错误发生在客户端连接阶段', '返回 EndpointConnectionError，本地文件仍在', '预测正确'],
+], widths=[1.2, 1.75, 1.55, 0.7], font_size=8.5)
+
+heading('五、实验步骤与结果', 1)
+heading('5.1 身份登记与原始数据生成', 2)
+code_block('.\\venv\\Scripts\\python.exe -m coursekit identity --student-id 2410311411 --lab 01 --stage start\n.\\.venv\\Scripts\\python.exe -m coursekit seed --rows 20000')
+para('身份记录 run_id = ac50c736765f4e839f435c83a1de72e4，最终身份记录 run_id = f048eb1f6255478ab5df34cf073e23e5。原始数据生成后行数为 20,102。')
+
+heading('5.2 S3 往返与内容哈希', 2)
+para('执行 .\\.venv\\Scripts\\python.exe -m coursekit lab01。最终复验 run_id = 34ed93b95c994a1f99563593b5de1f15，结果如下：')
+add_table(['字段', '实测值'], [
+    ['endpoint', 'http://127.0.0.1:56251'],
+    ['backend', 'Moto S3 API emulator'],
+    ['bucket', 'bdp-teaching'],
+    ['key', 'bronze/events/0d93bcd25e28047f804238c220bdb5b1d2dadf328647c07de85ba0104e8e2854.jsonl'],
+    ['bytes', '3,892,184'],
+    ['source SHA-256', '0d93bcd25e28047f804238c220bdb5b1d2dadf328647c07de85ba0104e8e2854'],
+    ['download SHA-256', '0d93bcd25e28047f804238c220bdb5b1d2dadf328647c07de85ba0104e8e2854'],
+    ['hash_matches', 'true'],
+    ['version_ids_differ', 'true'],
+], widths=[1.25, 4.15], font_size=8.5)
+para('两个摘要完全相同，说明上传和下载后的对象内容逐字节一致。version_ids_differ=true 说明多次 PUT 产生不同对象版本标识；但版本标识变化不等于内容变化，内容身份仍由摘要说明。')
+image_with_caption('02-s3-roundtrip-final.png', '图 2　S3 往返最终结果')
+
+heading('5.3 个人对象键改动', 2)
+code_block('New-Item -ItemType Directory -Force .\\submissions\\lab01 | Out-Null\nCopy-Item -LiteralPath \'.\\01. 云端数据接口与可复现环境\\附件\\student_object_roundtrip.py\' -Destination \'.\\submissions\\lab01\\student_object_roundtrip.py\'')
+para('基线对象键为 shared/raw/demo.json，运行 run_id = ef597014473f4394a34dd46c9426ba6f，原始与下载摘要均为 23c0b20c65b4476c7e541044c09c88cd970bb02191681f804daef0b7ba49f0e8，equal=true。')
+image_with_caption('03-object-key-baseline.png', '图 3　改键前的基线运行')
+para('随后只修改 make_key()，把共享前缀改成含本人学号的前缀：')
+code_block('-    return "shared/raw/demo.json"\n+    return "students/2410311411/raw/demo.json"')
+para('修改后 run_id = c52a3005f20f4fba87a6eb2c8611fd53，key 为 students/2410311411/raw/demo.json，原始与下载摘要仍为 23c0…f0e8，equal=true。对象键变化后摘要未变化，说明“对象地址”和“内容身份”是两个不同概念；含学号的前缀还能避免不同提交者互相覆盖。')
+image_with_caption('04-object-key-student-prefix.png', '图 4　含本人学号的对象键结果')
+
+heading('5.4 payload 数值改动', 2)
+para('在改键后的个人副本中，把 payload 的 requests 从 3 改为 4，tokens 保持 120。')
+code_block('-    payload = json.dumps({"requests": 3, "tokens": 120}, sort_keys=True).encode("utf-8")\n+    payload = json.dumps({"requests": 4, "tokens": 120}, sort_keys=True).encode("utf-8")')
+para('运行 run_id = 795e796b5fa849a4a83fc5abad552467，key 不变，原始与下载摘要均变为 5657a58e4a955dcf741239aed81c7a600ca434c4b6c738557b8683d12b09d3f6，equal=true。payload 改变后上传与下载仍一致，但摘要改变，说明哈希能够区分不同的内容字节；哈希相等只证明“两端内容相同”，不能证明业务规则正确。')
+image_with_caption('05-payload-changed.png', '图 5　payload 改动后的运行结果')
+
+heading('5.5 故障与恢复', 2)
+para('使用无效 endpoint 执行预期失败：')
+code_block('.\\venv\\Scripts\\python.exe -m coursekit capture --lab 01 --stage expected-failure -- .\\.venv\\Scripts\\python.exe -m coursekit lab01 --endpoint http://127.0.0.1:1')
+para('实际返回 EndpointConnectionError: Could not connect to the endpoint URL: "http://127.0.0.1:1/". 故障运行 run_id = 1b1f4b877db64afb9a8c86cf0b27f906，退出码为 1；内部失败运行 run_id = 8f7bab6faab1429c97e961be0278ab37。错误发生在客户端连接阶段，没有证据表明上传成功，也不是数据质量问题。')
+image_with_caption('06-expected-failure.png', '图 6　无效 endpoint 的预期失败', 4.8)
+para('恢复时重新使用默认本地临时服务，执行 .\\.venv\\Scripts\\python.exe -m coursekit lab01。恢复运行 run_id = b96073ff4f49420d9099575718d77521，最新复验 run_id = 34ed93b95c994a1f99563593b5de1f15，两次均返回 hash_matches=true。这说明修正的是服务地址，而不是改写原始数据或伪造哈希。')
+image_with_caption('07-recovered.png', '图 7　恢复后的成功往返')
+
+heading('六、结果汇总', 1)
+add_table(['运行', '对象键', '内容 SHA-256', '下载一致', 'run_id'], [
+    ['S3 主数据往返', 'bronze/events/0d93…2854.jsonl', '0d93bcd2…e2854', '是', '34ed93b9…1f15'],
+    ['个人基线', 'shared/raw/demo.json', '23c0b20c…9f0e8', '是', 'ef597014…ba6f'],
+    ['改对象键', 'students/2410311411/raw/demo.json', '23c0b20c…9f0e8', '是', 'c52a3005…1fd53'],
+    ['改 payload', 'students/2410311411/raw/demo.json', '5657a58e…9d3f6', '是', '795e796b…52467'],
+    ['无效 endpoint', '未进入实际上传', '无成功结果', '否，连接失败', '1b1f4b87…7f906'],
+    ['恢复运行', 'bronze/events/0d93…2854.jsonl', '0d93bcd2…e2854', '是', 'b96073ff…77521'],
+], widths=[0.85, 1.3, 1.55, 0.55, 0.95], font_size=7.5)
+para('注：为避免表格过宽，摘要列显示首尾片段；完整 SHA-256 已在 5.2—5.4 节和证据 JSON 中列出。', size=9, first_line=False)
+
+heading('七、模拟与真实云的能力边界', 1)
+add_table(['能力', '本实验是否验证', '说明'], [
+    ['本机 HTTP 请求', '已验证', '通过 127.0.0.1 与 Moto 服务完成 PUT/GET'],
+    ['S3 API 基本往返', '已验证', '使用 boto3 的 put_object()、get_object()'],
+    ['文件字节一致性', '已验证', '原始与下载 SHA-256 完全相同'],
+    ['数据业务合法性', '未验证', '原始数据中仍包含 100 条重复和 2 条非法记录'],
+    ['云端持久性', '未验证', 'Moto 默认保存在内存，服务停止后对象消失'],
+    ['跨机容灾', '未验证', '所有服务与客户端都在同一台 Windows 电脑'],
+    ['真实 IAM 与访问控制', '未验证', '使用测试凭据，没有真实账号和权限策略'],
+    ['真实云账单与弹性扩展', '未验证', '没有调用公有云资源，也没有规模或计费实验'],
+], widths=[1.25, 1.15, 3.0], font_size=8.5)
+para('因此，本实验可以证明“本机 S3 API 往返后内容未变”，不能写成“完成了真实云部署”或“证明了生产级耐久性”。')
+
+heading('八、分析题', 1)
+for text in [
+    '1. 相同数据保存为两个对象键，为什么 SHA-256 不一定改变？因为 SHA-256 计算对象内容的字节序列，不包含桶名和对象键。对象键改变只改变寻址位置，不改变内容字节。',
+    '2. JSON 调整空格时，字节一致性和业务含义是否相同？不相同。增加或删除空格通常改变文件字节和 SHA-256，但如果 JSON 解析后的键值不变，业务含义可能相同。',
+    '3. 上传 input_tokens=-1 的文件成功，能证明什么？只能证明传输接口接受了文件字节，上传和下载链路可工作；不能证明字段范围合法、统计规则正确或业务数据可发布。',
+    '4. Moto 临时服务停止后，为什么还能做实验 02？因为实验 01 已把原始数据保存在本地 data/raw/events.jsonl，实验 02 直接读取本地文件；Moto 只承担本轮对象接口往返验证。',
+    '5. 改用真实云对象存储还要验证什么？还需验证身份认证与授权、桶策略、加密、区域与一致性、耐久性、审计日志、生命周期、配额、网络、故障恢复和真实费用。',
+]:
+    para(text, first_line=False)
+
+heading('九、实验总结与下一章交接', 1)
+for text in [
+    '建立 Python 3.12.13 课程环境并通过依赖检查；',
+    '生成默认规模 20,102 行原始事件，记录原始 SHA-256；',
+    '通过 Moto S3 API 完成上传、下载和双哈希比较；',
+    '将个人对象键改为 students/2410311411/raw/demo.json，验证键变化不改变内容摘要；',
+    '将 payload 的 requests 从 3 改为 4，验证内容变化会改变摘要；',
+    '使用无效 endpoint 取得真实连接失败证据，并在恢复后再次通过往返校验；',
+    '明确本机模拟服务与真实公有云之间的能力边界。',
+]:
+    bullet(text)
+para('下一章实验 02 将直接读取 data/raw/events.jsonl，其 SHA-256 为 0d93bcd25e28047f804238c220bdb5b1d2dadf328647c07de85ba0104e8e2854。实验 02 还需要处理本实验尚未解决的 100 条重复记录和 2 条非法记录，不能把“上传成功”误认为“数据质量合格”。')
+
+heading('附录：运行证据索引', 1)
+para('运行 JSON/HTML 位于 evidence/运行记录/，原始截图位于 evidence/截图/。', size=9, first_line=False)
+add_table(['阶段', 'run_id', '证据文件'], [
+    ['身份开始', 'ac50c736765f4e839f435c83a1de72e4', 'ac50c736765f4e839f435c83a1de72e4-start.html'],
+    ['环境检查', '8a813bc368a34c959cca8a326e937ab4', '8a813bc368a34c959cca8a326e937ab4-environment.html'],
+    ['S3 首次往返', '2869cab608d145ddbc9eebe8cd25f612', '2869cab608d145ddbc9eebe8cd25f612-verify.html'],
+    ['个人基线', 'ef597014473f4394a34dd46c9426ba6f', 'ef597014473f4394a34dd46c9426ba6f-student_object_roundtrip.html'],
+    ['改对象键', 'c52a3005f20f4fba87a6eb2c8611fd53', 'c52a3005f20f4fba87a6eb2c8611fd53-student_object_roundtrip.html'],
+    ['改 payload', '795e796b5fa849a4a83fc5abad552467', '795e796b5fa849a4a83fc5abad552467-student_object_roundtrip.html'],
+    ['预期失败', '1b1f4b877db64afb9a8c86cf0b27f906', '1b1f4b877db64afb9a8c86cf0b27f906-expected-failure.html'],
+    ['失败内部记录', '8f7bab6faab1429c97e961be0278ab37', '8f7bab6faab1429c97e961be0278ab37-failed-lab01.html'],
+    ['恢复运行', 'b96073ff4f49420d9099575718d77521', 'b96073ff4f49420d9099575718d77521-verify.html'],
+    ['最终复验', '34ed93b95c994a1f99563593b5de1f15', '34ed93b95c994a1f99563593b5de1f15-verify.html'],
+    ['身份结束', 'f048eb1f6255478ab5df34cf073e23e5', 'f048eb1f6255478ab5df34cf073e23e5-final.html'],
+], widths=[0.8, 2.55, 2.0], font_size=7.5)
+para('报告正文学号：2410311411', bold=True, first_line=False)
+
+# Footer identity and page number.
+section = doc.sections[0]
+footer_p = section.footer.paragraphs[0]
+footer_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+run = footer_p.add_run('学号 2410311411　|　实验一　云端数据接口与可复现环境')
+set_run_font(run, '宋体', 8.5, False)
+
+def force_black(paragraphs):
+    for paragraph in paragraphs:
+        for run in paragraph.runs:
+            run.font.color.rgb = RGBColor(0, 0, 0)
+
+
+force_black(doc.paragraphs)
+for table_obj in doc.tables:
+    for row_obj in table_obj.rows:
+        for cell_obj in row_obj.cells:
+            force_black(cell_obj.paragraphs)
+for section_obj in doc.sections:
+    for story in (section_obj.header, section_obj.footer, section_obj.first_page_header, section_obj.first_page_footer,
+                  section_obj.even_page_header, section_obj.even_page_footer):
+        force_black(story.paragraphs)
+        for table_obj in story.tables:
+            for row_obj in table_obj.rows:
+                for cell_obj in row_obj.cells:
+                    force_black(cell_obj.paragraphs)
+
+OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+DOCX_OUTPUTS.mkdir(parents=True, exist_ok=True)
+doc.save(str(OUTPUT))
+print(OUTPUT.resolve())
+print('paragraphs', len(doc.paragraphs), 'tables', len(doc.tables))

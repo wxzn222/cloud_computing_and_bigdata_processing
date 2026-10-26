@@ -1,0 +1,30 @@
+[
+  {
+    "line": 20101,
+    "reason": "invalid_input_tokens",
+    "record": {
+      "event_id": "bad-negative",
+      "event_time": "2026-03-01T00:00:00+00:00",
+      "service": "assistant",
+      "model": "small",
+      "input_tokens": -1,
+      "output_tokens": 291,
+      "latency_ms": 1083,
+      "status": "error"
+    }
+  },
+  {
+    "line": 20102,
+    "reason": "invalid_event_time",
+    "record": {
+      "event_id": "bad-time",
+      "event_time": "not-a-time",
+      "service": "assistant",
+      "model": "small",
+      "input_tokens": 1405,
+      "output_tokens": 568,
+      "latency_ms": 436,
+      "status": "ok"
+    }
+  }
+]
