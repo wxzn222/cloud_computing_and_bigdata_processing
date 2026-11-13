@@ -1,0 +1,42 @@
+diff --git "a/.\\03. \345\210\206\345\270\203\345\274\217\346\211\271\345\244\204\347\220\206\344\270\216\346\200\247\350\203\275\345\210\206\346\236\220\\\351\231\204\344\273\266\\student_latency_aggregate.py" "b/.\\submissions\\lab03\\student_latency_aggregate.py"
+index 1ed754f..51a1e42 100644
+--- "a/.\\03. \345\210\206\345\270\203\345\274\217\346\211\271\345\244\204\347\220\206\344\270\216\346\200\247\350\203\275\345\210\206\346\236\220\\\351\231\204\344\273\266\\student_latency_aggregate.py"	
++++ "b/.\\submissions\\lab03\\student_latency_aggregate.py"
+@@ -9,7 +9,7 @@ sys.path.insert(0, str(COURSE_ROOT))
+ from coursekit.common import DATA, OUT, write_json
+ from coursekit.evidence import capture_callable
+ 
+-SLOW_MS = 1000  # 本人改为 2000；运行前写下预测。
++SLOW_MS = 2000  # 本人由 1000 改为 2000；运行前已写预测。
+ 
+ 
+ def main():
+@@ -22,19 +22,24 @@ def main():
+                       memory_limit="1GiB", host="127.0.0.1", dashboard_address=None) as cluster:
+         with Client(cluster) as client:
+             df = dd.read_parquet(str(source)).repartition(npartitions=8)
+-            df = df.assign(is_slow=(df["latency_ms"] >= SLOW_MS).astype("int64"))
+-            actual = df.groupby("service").agg({"event_id": "count", "latency_ms": "sum", "is_slow": "sum"}).compute()
+-            actual = actual.reset_index().rename(columns={"event_id": "requests", "latency_ms": "latency_ms_sum", "is_slow": "slow_requests"})
++            df = df.assign(
++                is_slow=(df["latency_ms"] >= SLOW_MS).astype("int64"),
++                is_error=(df["status"] == "error").astype("int64"),
++            )
++            actual = df.groupby("service").agg({"event_id": "count", "latency_ms": "sum", "is_slow": "sum", "is_error": "sum"}).compute()
++            actual = actual.reset_index().rename(columns={"event_id": "requests", "latency_ms": "latency_ms_sum", "is_slow": "slow_requests", "is_error": "errors"})
+             actual = actual.sort_values("service").reset_index(drop=True)
+             pids = client.run(os.getpid)
+     with duckdb.connect() as con:
+         expected = con.execute("""SELECT service,COUNT(*)::BIGINT AS requests,
+             SUM(latency_ms)::BIGINT AS latency_ms_sum,
+-            SUM(CASE WHEN latency_ms >= ? THEN 1 ELSE 0 END)::BIGINT AS slow_requests
++            SUM(CASE WHEN latency_ms >= ? THEN 1 ELSE 0 END)::BIGINT AS slow_requests,
++            SUM(CASE WHEN status = 'error' THEN 1 ELSE 0 END)::BIGINT AS errors
+             FROM read_parquet(?) GROUP BY service ORDER BY service""", [SLOW_MS, str(source)]).fetchdf()
+     assert actual.to_dict(orient="records") == expected.to_dict(orient="records")
+     actual["mean_latency_ms"] = actual["latency_ms_sum"] / actual["requests"]
+     actual["slow_rate"] = actual["slow_requests"] / actual["requests"]
++    actual["error_rate"] = actual["errors"] / actual["requests"]
+     result = {"slow_ms": SLOW_MS, "worker_pids": pids, "matches_sql": True,
+               "aggregate": actual.to_dict(orient="records")}
+     target = OUT / f"lab03/student-latency-{SLOW_MS}.json"

@@ -1,0 +1,21 @@
+{
+  "kind": "coursekit.run",
+  "_evidence": {
+    "schema_version": 1,
+    "student_id": "2410311411",
+    "experiment_id": "03",
+    "run_id": "d05efed99ba74f7b9790ed11e7f2a6de",
+    "captured_at": "2026-11-13T03:50:23.499599+00:00",
+    "stage": "probe-03"
+  },
+  "result": null,
+  "artifacts": [],
+  "command": [
+    ".\\.venv\\Scripts\\python.exe",
+    "-c",
+    "from coursekit.common import read_json; r=read_json('outputs/lab03/student-latency-2000.json'); a=next(x for x in r['aggregate'] if x['service']=='assistant'); print('assistant_mean_ms=',a['latency_ms_sum']/a['requests']); print('assistant_slow_rate=',a['slow_requests']/a['requests']); print('assistant_error_rate=',a['errors']/a['requests'])"
+  ],
+  "exit_code": 0,
+  "stdout": "assistant_mean_ms= 2030.8615790976585\nassistant_slow_rate= 0.508280982295831\nassistant_error_rate= 0.03876356367789834\n",
+  "stderr": ""
+}

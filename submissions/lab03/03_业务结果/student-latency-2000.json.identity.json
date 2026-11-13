@@ -1,0 +1,12 @@
+{
+  "file": "outputs/lab03/student-latency-2000.json",
+  "sha256": "0e45109e05340b9b02226b8139d3794581b4b93a04b55dacda9e6d7d921fc05a",
+  "_evidence": {
+    "schema_version": 1,
+    "student_id": "2410311411",
+    "experiment_id": "03",
+    "run_id": "06bbcb7572864418acad6e01d14474d0",
+    "captured_at": "2026-11-13T03:49:59.713098+00:00",
+    "stage": "student_latency"
+  }
+}

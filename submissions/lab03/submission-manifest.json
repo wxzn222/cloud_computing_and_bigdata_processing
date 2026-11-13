@@ -1,0 +1,363 @@
+{
+  "kind": "coursekit.submission",
+  "_evidence": {
+    "schema_version": 1,
+    "student_id": "2410311411",
+    "experiment_id": "03",
+    "run_id": "7f6e3d53468f4e9d800be4bcb85b473f",
+    "captured_at": "2026-11-13T03:59:35.126752+00:00",
+    "stage": "submission"
+  },
+  "report": {
+    "file": "01_实验报告/实验报告_何嘉欣_2410311411.pdf",
+    "sha256": "436d9324349ad2f519b944ec4acbb62dea03f87b98ef11020af23dd65136e8c4"
+  },
+  "files": [
+    {
+      "file": "01_实验报告/实验报告_何嘉欣_2410311411.docx",
+      "sha256": "1e10ef072f71964deb145695353295339f77da7f0e7bcba8e2a0de831097c06b"
+    },
+    {
+      "file": "01_实验报告/实验报告_何嘉欣_2410311411.pdf",
+      "sha256": "436d9324349ad2f519b944ec4acbb62dea03f87b98ef11020af23dd65136e8c4"
+    },
+    {
+      "file": "02_代码与改动/代码差异/student_latency_1000_to_2000_errors.diff",
+      "sha256": "96c113cd1aa12c2bebcfc16a4505cd2f2c6ede80af7c04b240ad4f2b950090af"
+    },
+    {
+      "file": "02_代码与改动/修改前/student_latency_aggregate.py",
+      "sha256": "833a28ad806328f4d8abbe85d06da49a770e4f7a5f748c832491741bacaa7bc2"
+    },
+    {
+      "file": "02_代码与改动/当前代码/student_latency_aggregate.py",
+      "sha256": "00a3e47744a4481c7c952772ccf3d0f9e1f4dc284a9ccbea7caef9d351478d11"
+    },
+    {
+      "file": "03_业务结果/benchmark-w1-p8.json",
+      "sha256": "f98468952c72302baabaca3650d80e5e650fe0ff1f889f417b536f11075272d0"
+    },
+    {
+      "file": "03_业务结果/benchmark-w2-p4.json",
+      "sha256": "9eb2da7c01f7ebf34c8b7a7728a47adfbd72f64d031a9214f54f09aff4d2351f"
+    },
+    {
+      "file": "03_业务结果/benchmark-w2-p8.json",
+      "sha256": "5aa9c0e6a6846d65b0d77409f5def17e2cc06252a9c1eff96dd685ef1c29cdde"
+    },
+    {
+      "file": "03_业务结果/student-latency-1000.json",
+      "sha256": "e9819f7b3fb7d744f286c7b20dff0a73fd59dfc0d574754030342bd94f8e777d"
+    },
+    {
+      "file": "03_业务结果/student-latency-1000.json.identity.json",
+      "sha256": "15c80d1d2b5a43961d5437759f6655ad0f544596d5b413fb031196971be8cff4"
+    },
+    {
+      "file": "03_业务结果/student-latency-2000.json",
+      "sha256": "0e45109e05340b9b02226b8139d3794581b4b93a04b55dacda9e6d7d921fc05a"
+    },
+    {
+      "file": "03_业务结果/student-latency-2000.json.identity.json",
+      "sha256": "b9855940347f1ea6aace8626e627d4781fe3159584b6c72ad2dbdaaa69bd717e"
+    },
+    {
+      "file": "04_数据清单/events.parquet",
+      "sha256": "516b3d78aab91c1487d9a24979eaef514c5acb7309d0d82a6688a762836634dc"
+    },
+    {
+      "file": "04_数据清单/silver.json",
+      "sha256": "1dffe071e94a27c1f49c7d6aae7cb827a9ddb4f09f91cbdbb1fe8451ce5f7044"
+    },
+    {
+      "file": "evidence/截图/01-silver-hash.png",
+      "sha256": "a605e7119cebc984eb76a333fbfb0b0ea67e8bc36bfa6f6e088b3883117055a8"
+    },
+    {
+      "file": "evidence/截图/02-w1-p8.png",
+      "sha256": "71dba364b57c73f0b4e3d2ada6face282db5f04c947bca929192944dbda4066b"
+    },
+    {
+      "file": "evidence/截图/03-w2-p8.png",
+      "sha256": "733f568c71926e7408b2194ac145bf9d33c6888c3b36f034db64d2d4c6cd8f40"
+    },
+    {
+      "file": "evidence/截图/04-w2-p4.png",
+      "sha256": "be16171219e430bdc0dca0708eea2331b80ffd0ad1cfab2b6f7d386e82379875"
+    },
+    {
+      "file": "evidence/截图/05-partition-skew.png",
+      "sha256": "1e426df644e63b5bc3f27227ed8287f9e6c19508d843158a72b8aad45f671c98"
+    },
+    {
+      "file": "evidence/截图/06-latency-1000.png",
+      "sha256": "cb52f5ff426f58ea56543894e979ff815f4184eb2344bfcea1e731bee1030290"
+    },
+    {
+      "file": "evidence/截图/07-latency-2000-errors.png",
+      "sha256": "68bb52f2182aa1186b9638cb569aae7f098731394910d0cbec3077624f9b13bb"
+    },
+    {
+      "file": "evidence/截图/08-error-extension.png",
+      "sha256": "7b1e52693b4df73208188ee89109776264b74a27d228a5e051d4d290c8cf91a0"
+    },
+    {
+      "file": "evidence/截图/09-manual-check.png",
+      "sha256": "c8614d8f475a1e3dbe2de01565aadad2914af534097781c8cdfce9a473c53f08"
+    },
+    {
+      "file": "evidence/截图/10-expected-failure.png",
+      "sha256": "1ab3a0c2d0ece99788204990fd862adb4d9d346f4a3a79bd89ded024c7829ebf"
+    },
+    {
+      "file": "evidence/运行记录/06bbcb7572864418acad6e01d14474d0-student_latency.html",
+      "sha256": "2d1733997903f410c36274a9f590c8b5c3b716fbab637c9ebef6b622f3ff3061"
+    },
+    {
+      "file": "evidence/运行记录/06bbcb7572864418acad6e01d14474d0-student_latency.json",
+      "sha256": "5c22af3e2d9221146863f88a4c34c37a622b97b493eb27e404b08693b565fd4c"
+    },
+    {
+      "file": "evidence/运行记录/17394ae66a054bffa1404c850fd9643b-probe-02.html",
+      "sha256": "e6ed360b9a506abad816489f4686508dbdbd41e19b3c930129029c0cb9e8bc75"
+    },
+    {
+      "file": "evidence/运行记录/17394ae66a054bffa1404c850fd9643b-probe-02.json",
+      "sha256": "2e0a0837d8a4708184118c46b442c67c867cbdcb73aa12e782998edce0268904"
+    },
+    {
+      "file": "evidence/运行记录/1856d8e5555f45ddba473928894571bd-verify.html",
+      "sha256": "3be909584ee40eb31c5555a4e194d0031d3e9785449273e272e81d4895a2a0ed"
+    },
+    {
+      "file": "evidence/运行记录/1856d8e5555f45ddba473928894571bd-verify.json",
+      "sha256": "3eed419ecc35e43a51b3361beba9d6e253a0515cac0329e7c0c124c21e9faef4"
+    },
+    {
+      "file": "evidence/运行记录/7fc9b0e9426c4b599ee82a5730325a26-student_latency.html",
+      "sha256": "7bbf8c5eadd32c53496a40c87f52acb44d541d072b2c8176a9852ef89ea2e458"
+    },
+    {
+      "file": "evidence/运行记录/7fc9b0e9426c4b599ee82a5730325a26-student_latency.json",
+      "sha256": "8a7fa3cade284d89a3414ff562121e18b5719aea1623c9e34e0dbee030ff9153"
+    },
+    {
+      "file": "evidence/运行记录/b72960e1868040288f4e3ab839cf4b2e-verify.html",
+      "sha256": "2e35b56f65236e23ca79d96276feacb972f57c9ecc2edad9ce242763d64d5e49"
+    },
+    {
+      "file": "evidence/运行记录/b72960e1868040288f4e3ab839cf4b2e-verify.json",
+      "sha256": "f3d5af25402b85b745f5e7e7fc2f2b8ce3eb4a21582cd6ff0c2792a963b6f201"
+    },
+    {
+      "file": "evidence/运行记录/d05efed99ba74f7b9790ed11e7f2a6de-probe-03.html",
+      "sha256": "2259f594b8b0777d4ee7d0fb692dd3b1e294b26daa3b261ca725170ada179370"
+    },
+    {
+      "file": "evidence/运行记录/d05efed99ba74f7b9790ed11e7f2a6de-probe-03.json",
+      "sha256": "98e6c8f2c19d35389bb5db45ccef709099fa6ae7261f9fbbb4e0def8da349054"
+    },
+    {
+      "file": "evidence/运行记录/d601cd13c0d54ca5ab4c2e9e0637d5c9-verify.html",
+      "sha256": "687d48524e402eb9f95307ca7cd63b7143cc28178a6d15b84778200d65f98264"
+    },
+    {
+      "file": "evidence/运行记录/d601cd13c0d54ca5ab4c2e9e0637d5c9-verify.json",
+      "sha256": "1e2a17d421177823a1a0146019b3a75afa8fabeb7545a47208ac31f988b9bbc7"
+    },
+    {
+      "file": "evidence/运行记录/f2ca7d1094b54c8cbad6d8c00c78ec33-expected-failure.html",
+      "sha256": "ab7bc8eb232a775a03fa230f194468e7ccd9e10f54e5d789f75d4a24d8f0384b"
+    },
+    {
+      "file": "evidence/运行记录/f2ca7d1094b54c8cbad6d8c00c78ec33-expected-failure.json",
+      "sha256": "dbad198f612f6c8517d92ead2b10ed800f8a3383f077a47aa3e632d6ccb1246f"
+    },
+    {
+      "file": "evidence/运行记录/fa687482e47d4e109e68273a71e7a59c-probe-01.html",
+      "sha256": "035e253d1a57a2f0e63732dbe4a302144c50d1248084e128fd59daa5345961f4"
+    },
+    {
+      "file": "evidence/运行记录/fa687482e47d4e109e68273a71e7a59c-probe-01.json",
+      "sha256": "f5a2590e735fee685873f011e4bfc45e5dd6b452ed8f72f7a265b11bb6b653c7"
+    },
+    {
+      "file": "evidence/运行记录/fc57c9f154c147fb9ff9a1a1d40eca88-check_error_extension.html",
+      "sha256": "afced0f32e241d3ea5d8a39f725ce32b374feba1cd8dad91d13775e493d10599"
+    },
+    {
+      "file": "evidence/运行记录/fc57c9f154c147fb9ff9a1a1d40eca88-check_error_extension.json",
+      "sha256": "9407797c5163d418909569e80b98989d6070536ea91f66cca0dd604760e72059"
+    },
+    {
+      "file": "文件说明.txt",
+      "sha256": "f4e536339d575bd82e693ee45e4ad8143a7df39b6e715644e169affbecbce118"
+    }
+  ],
+  "runs": [
+    {
+      "file": "evidence/运行记录/06bbcb7572864418acad6e01d14474d0-student_latency.json",
+      "sha256": "5c22af3e2d9221146863f88a4c34c37a622b97b493eb27e404b08693b565fd4c",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "03",
+        "run_id": "06bbcb7572864418acad6e01d14474d0",
+        "captured_at": "2026-11-13T03:49:59.713098+00:00",
+        "stage": "student_latency"
+      }
+    },
+    {
+      "file": "evidence/运行记录/17394ae66a054bffa1404c850fd9643b-probe-02.json",
+      "sha256": "2e0a0837d8a4708184118c46b442c67c867cbdcb73aa12e782998edce0268904",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "03",
+        "run_id": "17394ae66a054bffa1404c850fd9643b",
+        "captured_at": "2026-11-13T03:49:03.100782+00:00",
+        "stage": "probe-02"
+      }
+    },
+    {
+      "file": "evidence/运行记录/1856d8e5555f45ddba473928894571bd-verify.json",
+      "sha256": "3eed419ecc35e43a51b3361beba9d6e253a0515cac0329e7c0c124c21e9faef4",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "03",
+        "run_id": "1856d8e5555f45ddba473928894571bd",
+        "captured_at": "2026-11-13T03:47:39.627959+00:00",
+        "stage": "verify"
+      }
+    },
+    {
+      "file": "evidence/运行记录/7fc9b0e9426c4b599ee82a5730325a26-student_latency.json",
+      "sha256": "8a7fa3cade284d89a3414ff562121e18b5719aea1623c9e34e0dbee030ff9153",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "03",
+        "run_id": "7fc9b0e9426c4b599ee82a5730325a26",
+        "captured_at": "2026-11-13T03:49:08.819180+00:00",
+        "stage": "student_latency"
+      }
+    },
+    {
+      "file": "evidence/运行记录/b72960e1868040288f4e3ab839cf4b2e-verify.json",
+      "sha256": "f3d5af25402b85b745f5e7e7fc2f2b8ce3eb4a21582cd6ff0c2792a963b6f201",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "03",
+        "run_id": "b72960e1868040288f4e3ab839cf4b2e",
+        "captured_at": "2026-11-13T03:48:48.726806+00:00",
+        "stage": "verify"
+      }
+    },
+    {
+      "file": "evidence/运行记录/d05efed99ba74f7b9790ed11e7f2a6de-probe-03.json",
+      "sha256": "98e6c8f2c19d35389bb5db45ccef709099fa6ae7261f9fbbb4e0def8da349054",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "03",
+        "run_id": "d05efed99ba74f7b9790ed11e7f2a6de",
+        "captured_at": "2026-11-13T03:50:23.499599+00:00",
+        "stage": "probe-03"
+      }
+    },
+    {
+      "file": "evidence/运行记录/d601cd13c0d54ca5ab4c2e9e0637d5c9-verify.json",
+      "sha256": "1e2a17d421177823a1a0146019b3a75afa8fabeb7545a47208ac31f988b9bbc7",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "03",
+        "run_id": "d601cd13c0d54ca5ab4c2e9e0637d5c9",
+        "captured_at": "2026-11-13T03:48:16.925468+00:00",
+        "stage": "verify"
+      }
+    },
+    {
+      "file": "evidence/运行记录/f2ca7d1094b54c8cbad6d8c00c78ec33-expected-failure.json",
+      "sha256": "dbad198f612f6c8517d92ead2b10ed800f8a3383f077a47aa3e632d6ccb1246f",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "03",
+        "run_id": "f2ca7d1094b54c8cbad6d8c00c78ec33",
+        "captured_at": "2026-11-13T03:48:39.169030+00:00",
+        "stage": "expected-failure"
+      }
+    },
+    {
+      "file": "evidence/运行记录/fa687482e47d4e109e68273a71e7a59c-probe-01.json",
+      "sha256": "f5a2590e735fee685873f011e4bfc45e5dd6b452ed8f72f7a265b11bb6b653c7",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "03",
+        "run_id": "fa687482e47d4e109e68273a71e7a59c",
+        "captured_at": "2026-11-13T03:47:35.623465+00:00",
+        "stage": "probe-01"
+      }
+    },
+    {
+      "file": "evidence/运行记录/fc57c9f154c147fb9ff9a1a1d40eca88-check_error_extension.json",
+      "sha256": "9407797c5163d418909569e80b98989d6070536ea91f66cca0dd604760e72059",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "03",
+        "run_id": "fc57c9f154c147fb9ff9a1a1d40eca88",
+        "captured_at": "2026-11-13T03:50:14.085574+00:00",
+        "stage": "check_error_extension"
+      }
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "evidence/截图/01-silver-hash.png",
+      "sha256": "a605e7119cebc984eb76a333fbfb0b0ea67e8bc36bfa6f6e088b3883117055a8"
+    },
+    {
+      "file": "evidence/截图/02-w1-p8.png",
+      "sha256": "71dba364b57c73f0b4e3d2ada6face282db5f04c947bca929192944dbda4066b"
+    },
+    {
+      "file": "evidence/截图/03-w2-p8.png",
+      "sha256": "733f568c71926e7408b2194ac145bf9d33c6888c3b36f034db64d2d4c6cd8f40"
+    },
+    {
+      "file": "evidence/截图/04-w2-p4.png",
+      "sha256": "be16171219e430bdc0dca0708eea2331b80ffd0ad1cfab2b6f7d386e82379875"
+    },
+    {
+      "file": "evidence/截图/05-partition-skew.png",
+      "sha256": "1e426df644e63b5bc3f27227ed8287f9e6c19508d843158a72b8aad45f671c98"
+    },
+    {
+      "file": "evidence/截图/06-latency-1000.png",
+      "sha256": "cb52f5ff426f58ea56543894e979ff815f4184eb2344bfcea1e731bee1030290"
+    },
+    {
+      "file": "evidence/截图/07-latency-2000-errors.png",
+      "sha256": "68bb52f2182aa1186b9638cb569aae7f098731394910d0cbec3077624f9b13bb"
+    },
+    {
+      "file": "evidence/截图/08-error-extension.png",
+      "sha256": "7b1e52693b4df73208188ee89109776264b74a27d228a5e051d4d290c8cf91a0"
+    },
+    {
+      "file": "evidence/截图/09-manual-check.png",
+      "sha256": "c8614d8f475a1e3dbe2de01565aadad2914af534097781c8cdfce9a473c53f08"
+    },
+    {
+      "file": "evidence/截图/10-expected-failure.png",
+      "sha256": "1ab3a0c2d0ece99788204990fd862adb4d9d346f4a3a79bd89ded024c7829ebf"
+    }
+  ],
+  "status": "pending_teacher_screenshot_review",
+  "note": "提交清单仅用于材料预检查，须经授课老师逐张复核后方可验收。"
+}

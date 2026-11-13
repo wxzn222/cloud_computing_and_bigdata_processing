@@ -1,0 +1,42 @@
+{
+  "slow_ms": 1000,
+  "worker_pids": {
+    "tcp://127.0.0.1:49363": 20168,
+    "tcp://127.0.0.1:49368": 15472
+  },
+  "matches_sql": true,
+  "aggregate": [
+    {
+      "service": "assistant",
+      "requests": 14008,
+      "latency_ms_sum": 28448309,
+      "slow_requests": 10589,
+      "mean_latency_ms": 2030.8615790976585,
+      "slow_rate": 0.7559251856082239
+    },
+    {
+      "service": "batch",
+      "requests": 2023,
+      "latency_ms_sum": 4079006,
+      "slow_requests": 1519,
+      "mean_latency_ms": 2016.3153732081068,
+      "slow_rate": 0.7508650519031141
+    },
+    {
+      "service": "search",
+      "requests": 3969,
+      "latency_ms_sum": 8137035,
+      "slow_requests": 3043,
+      "mean_latency_ms": 2050.1473922902496,
+      "slow_rate": 0.7666918619299572
+    }
+  ],
+  "_evidence": {
+    "schema_version": 1,
+    "student_id": "2410311411",
+    "experiment_id": "03",
+    "run_id": "7fc9b0e9426c4b599ee82a5730325a26",
+    "captured_at": "2026-11-13T03:49:08.819180+00:00",
+    "stage": "student-latency-1000"
+  }
+}

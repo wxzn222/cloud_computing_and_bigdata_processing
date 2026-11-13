@@ -1,0 +1,16 @@
+{
+  "kind": "coursekit.run",
+  "_evidence": {
+    "schema_version": 1,
+    "student_id": "2410311411",
+    "experiment_id": "03",
+    "run_id": "fc57c9f154c147fb9ff9a1a1d40eca88",
+    "captured_at": "2026-11-13T03:50:14.085574+00:00",
+    "stage": "check_error_extension"
+  },
+  "result": null,
+  "artifacts": [],
+  "exit_code": 0,
+  "stdout": "ERROR_EXTENSION_PASS {'total_errors': 800}\n",
+  "stderr": ""
+}

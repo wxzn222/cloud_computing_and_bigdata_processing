@@ -1,0 +1,23 @@
+实验三 分布式批处理与性能分析
+学号：2410311411
+姓名：何嘉欣
+
+01_实验报告
+  实验报告 Word 与 PDF。PDF 为最终提交版。
+
+02_代码与改动
+  修改前：慢请求阈值为 1000 ms 的初始脚本。
+  当前代码：阈值为 2000 ms，并新增 errors/error_rate 的最终脚本。
+  代码差异：从初始脚本到最终脚本的完整 diff。
+
+03_业务结果
+  benchmark-w1-p8.json、benchmark-w2-p8.json、benchmark-w2-p4.json。
+  student-latency-1000.json、student-latency-2000.json。
+  原始结果旁的 *.identity.json 为运行身份旁证。
+
+04_数据清单
+  Silver 清单 silver.json 与对应 events.parquet。
+
+evidence
+  截图：10 张评分截图，均原生显示学号、实验号 03、run_id 和实际结果。
+  运行记录：与截图对应的 JSON 和同名 HTML。
