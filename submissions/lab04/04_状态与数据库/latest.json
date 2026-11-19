@@ -1,0 +1,8 @@
+{
+  "run_id": "df5e2ceefb8d",
+  "database": "D:\\云计算与大数据处理\\reference-BDP\\data\\state\\runs\\df5e2ceefb8d\\events.sqlite",
+  "source_sha256": "516b3d78aab91c1487d9a24979eaef514c5acb7309d0d82a6688a762836634dc",
+  "database_sha256": "4d0741a0704a8df6428f2bfb07b03f0691fd476c56b46da9a30f9e9ff52125b6",
+  "stats_sha256": "d9d4eb24264819b20d5e64a86138b075df3efb0664a677c7a507e9b6d9f5466c",
+  "final_offset": 20002
+}

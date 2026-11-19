@@ -1,0 +1,20 @@
+[
+  {
+    "service": "assistant",
+    "requests": 14009,
+    "input_tokens": 12633388,
+    "output_tokens": 4310320
+  },
+  {
+    "service": "batch",
+    "requests": 2023,
+    "input_tokens": 1816567,
+    "output_tokens": 616515
+  },
+  {
+    "service": "search",
+    "requests": 3970,
+    "input_tokens": 3568992,
+    "output_tokens": 1219714
+  }
+]

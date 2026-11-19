@@ -1,0 +1,16 @@
+{
+  "kind": "coursekit.run",
+  "_evidence": {
+    "schema_version": 1,
+    "student_id": "2410311411",
+    "experiment_id": "04",
+    "run_id": "dadd21b276d8450d800edef1d45d0783",
+    "captured_at": "2026-11-19T08:02:45.677336+00:00",
+    "stage": "check_student_transaction"
+  },
+  "result": null,
+  "artifacts": [],
+  "exit_code": 0,
+  "stdout": "STUDENT_TRANSACTION_PASS\n[\n  {\n    \"stage\": \"initial\",\n    \"state\": [\n      2,\n      2\n    ]\n  },\n  {\n    \"stage\": \"replay_old\",\n    \"state\": [\n      2,\n      2\n    ]\n  },\n  {\n    \"stage\": \"failed_and_rolled_back\",\n    \"state\": [\n      2,\n      2\n    ]\n  },\n  {\n    \"stage\": \"recovered_and_replayed\",\n    \"state\": [\n      3,\n      3\n    ]\n  }\n]\n",
+  "stderr": ""
+}

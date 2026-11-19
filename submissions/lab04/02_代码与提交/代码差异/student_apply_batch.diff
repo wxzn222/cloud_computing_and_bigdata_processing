@@ -1,0 +1,31 @@
+﻿diff --git "a/.\\04. \345\242\236\351\207\217\344\272\213\344\273\266\345\244\204\347\220\206\344\270\216\346\225\205\351\232\234\346\201\242\345\244\215\\\351\231\204\344\273\266\\student_apply_batch.py" "b/.\\submissions\\lab04\\student_apply_batch.py"
+index 6eb2efd..c84bbfd 100644
+--- "a/.\\04. \345\242\236\351\207\217\344\272\213\344\273\266\345\244\204\347\220\206\344\270\216\346\225\205\351\232\234\346\201\242\345\244\215\\\351\231\204\344\273\266\\student_apply_batch.py"	
++++ "b/.\\submissions\\lab04\\student_apply_batch.py"
+@@ -14,4 +14,25 @@ def apply_student(con, rows, next_offset, fail_before_commit=False):
+     必须显式 BEGIN，事件与 checkpoint 同事务，成功 COMMIT，异常 ROLLBACK 后继续抛出。
+     允许使用 SQL 参数化与 INSERT OR IGNORE；不要修改表结构或核验器。
+     """
+-    raise NotImplementedError("请本人实现原子批处理函数，再运行 check_student_transaction.py")
++    con.execute("BEGIN IMMEDIATE")
++    try:
++        before = con.execute("SELECT COUNT(*) FROM events").fetchone()[0]
++        for event_id, tokens in rows:
++            con.execute(
++                "INSERT OR IGNORE INTO events(id, tokens) VALUES (?, ?)",
++                (event_id, tokens),
++            )
++        con.execute(
++            """INSERT INTO checkpoint(id, offset) VALUES (1, ?)
++               ON CONFLICT(id) DO UPDATE
++               SET offset = MAX(offset, excluded.offset)""",
++            (next_offset,),
++        )
++        if fail_before_commit:
++            raise RuntimeError("INJECTED_FAILURE_BEFORE_COMMIT")
++        con.commit()
++    except Exception:
++        con.rollback()
++        raise
++    after = con.execute("SELECT COUNT(*) FROM events").fetchone()[0]
++    return after - before

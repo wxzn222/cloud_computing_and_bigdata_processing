@@ -1,0 +1,52 @@
+{
+  "run_id": "df5e2ceefb8d",
+  "database": "D:\\云计算与大数据处理\\reference-BDP\\data\\state\\runs\\df5e2ceefb8d\\events.sqlite",
+  "source_sha256": "516b3d78aab91c1487d9a24979eaef514c5acb7309d0d82a6688a762836634dc",
+  "database_sha256": "4d0741a0704a8df6428f2bfb07b03f0691fd476c56b46da9a30f9e9ff52125b6",
+  "stats_sha256": "d9d4eb24264819b20d5e64a86138b075df3efb0664a677c7a507e9b6d9f5466c",
+  "final_offset": 20002,
+  "source_rows": 20000,
+  "demo_event_ids": {
+    "recovered": "increment-new",
+    "late": "increment-late"
+  },
+  "initial_inserted": 20000,
+  "duplicate_inserted": 0,
+  "failure_injected": true,
+  "rows_after_failure": 20000,
+  "offset_before": 20000,
+  "offset_after_failure": 20000,
+  "recovered_inserted": 1,
+  "late_inserted": 1,
+  "final_rows": 20002,
+  "late_policy": "accept and recompute historical aggregate; no watermark implemented",
+  "aggregate": [
+    {
+      "service": "assistant",
+      "requests": 14009,
+      "input_tokens": 12633388,
+      "output_tokens": 4310320
+    },
+    {
+      "service": "batch",
+      "requests": 2023,
+      "input_tokens": 1816567,
+      "output_tokens": 616515
+    },
+    {
+      "service": "search",
+      "requests": 3970,
+      "input_tokens": 3568992,
+      "output_tokens": 1219714
+    }
+  ],
+  "semantics": "single-database transactional effect with event_id deduplication; not global exactly-once",
+  "_evidence": {
+    "schema_version": 1,
+    "student_id": "2410311411",
+    "experiment_id": "04",
+    "run_id": "91b7e89eedff45ee981613572867b55f",
+    "captured_at": "2026-11-19T08:02:16.688348+00:00",
+    "stage": "replay"
+  }
+}

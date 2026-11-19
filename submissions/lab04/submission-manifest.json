@@ -1,0 +1,179 @@
+{
+  "kind": "coursekit.submission",
+  "_evidence": {
+    "schema_version": 1,
+    "student_id": "2410311411",
+    "experiment_id": "04",
+    "run_id": "3773c1e04d854280904f51c80299ec94",
+    "captured_at": "2026-11-19T08:08:29.757936+00:00",
+    "stage": "submission"
+  },
+  "report": {
+    "file": "01_实验报告/实验报告_何嘉欣_2410311411.pdf",
+    "sha256": "1cf664ea40df62059458ef7638d62c00d0a0d35909eecfa4dde54072eb9298db"
+  },
+  "files": [
+    {
+      "file": "01_实验报告/实验报告_何嘉欣_2410311411.docx",
+      "sha256": "a976ea718b63b6d9d9cd24292b2635b5c72be25b6029db995361391e2ffea4e9"
+    },
+    {
+      "file": "01_实验报告/实验报告_何嘉欣_2410311411.pdf",
+      "sha256": "1cf664ea40df62059458ef7638d62c00d0a0d35909eecfa4dde54072eb9298db"
+    },
+    {
+      "file": "02_代码与提交/代码差异/student_apply_batch.diff",
+      "sha256": "f4ef0ae8941f726778b1b75a0bc3233126aeef1980c52b1f767dfc3991eb6828"
+    },
+    {
+      "file": "02_代码与提交/未实现骨架/student_apply_batch.py",
+      "sha256": "a787c5a0b24d4b8ba98c8b6902236c425ea071623020c65c33d655d4ef1987e2"
+    },
+    {
+      "file": "03_业务结果/realtime_service.json",
+      "sha256": "d9d4eb24264819b20d5e64a86138b075df3efb0664a677c7a507e9b6d9f5466c"
+    },
+    {
+      "file": "03_业务结果/replay.json",
+      "sha256": "1ce358067006414d64a2f4d82c59b80e15ba00d01ff6d5e5b4d6322d90d20c66"
+    },
+    {
+      "file": "04_状态与数据库/events.sqlite",
+      "sha256": "4d0741a0704a8df6428f2bfb07b03f0691fd476c56b46da9a30f9e9ff52125b6"
+    },
+    {
+      "file": "04_状态与数据库/latest.json",
+      "sha256": "3750618c9aec6885d98920e5e59178ad3cec83f6cd6104ca3e03e480bed64285"
+    },
+    {
+      "file": "evidence/截图/01-start-identity.png",
+      "sha256": "ef51f87f4d747ad21e2861cb6da5b375e166d6809ee4cd8a76c519a0dc508203"
+    },
+    {
+      "file": "evidence/截图/02-main-replay.png",
+      "sha256": "bd6aa4f8d50987615d658b1d136ea3cc508096971517717fb28d5f2b78c8b9a7"
+    },
+    {
+      "file": "evidence/截图/03-database-inspection.png",
+      "sha256": "50281f7662eba7b07ac2a88eda050e060c7d97b8c7c193d452a8901176245604"
+    },
+    {
+      "file": "evidence/截图/04-student-transaction-pass.png",
+      "sha256": "c58fe02b6d74620d0b9f3e22662e45dcdeef92a3257e58bac6abf903f2fa28bc"
+    },
+    {
+      "file": "evidence/截图/05-final-identity.png",
+      "sha256": "9dd47ffc91fe383b3db7cd8311d63374de224ee92d0f0050ca53a9918816baff"
+    },
+    {
+      "file": "evidence/运行记录/058ed7a3d4054d00960b2ea661ceaf2a-start.html",
+      "sha256": "fe716fb4838db328c756902d84e4406d5ccdbe48fa0de0951284e20cbbb94134"
+    },
+    {
+      "file": "evidence/运行记录/058ed7a3d4054d00960b2ea661ceaf2a-start.json",
+      "sha256": "aefe62388749560d8b861275fb9baf91d217c919f87d98de9f8221943bcec96f"
+    },
+    {
+      "file": "evidence/运行记录/5287cd662cb14aa99c7e4c0bd8aa72d9-inspect_state.html",
+      "sha256": "effdd888d9c3532a42ea873f786777c3a4b4e9e5ce069dc1e9aa741a1fb358f2"
+    },
+    {
+      "file": "evidence/运行记录/5287cd662cb14aa99c7e4c0bd8aa72d9-inspect_state.json",
+      "sha256": "24ee46cf00ae21d3ec8ccaa23fcca4c943eb68f0dc6e1eadb0c9cbab15b0d9f2"
+    },
+    {
+      "file": "evidence/运行记录/75038dfbc68f4ad1b6e497e422d49f45-final.html",
+      "sha256": "f7b26cca767eabe5746b509f2c0bf93bb7779aa8411ea52db153d7ce8ff05e3a"
+    },
+    {
+      "file": "evidence/运行记录/75038dfbc68f4ad1b6e497e422d49f45-final.json",
+      "sha256": "7f6a0ea79eed9ed90b23f3ad4dbbddef98815fcc0e99b4aac5f60685694c6a37"
+    },
+    {
+      "file": "evidence/运行记录/91b7e89eedff45ee981613572867b55f-verify.html",
+      "sha256": "9dbe7e98651ac4f4cc153bea94b9de18723c645b85d395f08ef7f60cf11f4d06"
+    },
+    {
+      "file": "evidence/运行记录/91b7e89eedff45ee981613572867b55f-verify.json",
+      "sha256": "392cdcb972ed069d93cd95dda8aee4dc9b85c078ac6a6f05b660d587d66d0038"
+    },
+    {
+      "file": "evidence/运行记录/dadd21b276d8450d800edef1d45d0783-check_student_transaction.html",
+      "sha256": "c61f9c0e1ccdc7833d9e2e40fc8a5b5e8f8f32219c155f3b0717702c639ed405"
+    },
+    {
+      "file": "evidence/运行记录/dadd21b276d8450d800edef1d45d0783-check_student_transaction.json",
+      "sha256": "a30f96e33c10f03dfa1ed7bbfa20e6c9631047619b4ab312a960bee7239eefc5"
+    },
+    {
+      "file": "student_apply_batch.py",
+      "sha256": "92397e2ad96d53f4089af382f088fa9a7a80695f7c6af68302b8e27fc336af3c"
+    },
+    {
+      "file": "文件说明.txt",
+      "sha256": "805bcd3e240cce26b61d30cb63dbf22ab0426c7e10ec11bedc7b0c00e9db462e"
+    }
+  ],
+  "runs": [
+    {
+      "file": "evidence/运行记录/5287cd662cb14aa99c7e4c0bd8aa72d9-inspect_state.json",
+      "sha256": "24ee46cf00ae21d3ec8ccaa23fcca4c943eb68f0dc6e1eadb0c9cbab15b0d9f2",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "04",
+        "run_id": "5287cd662cb14aa99c7e4c0bd8aa72d9",
+        "captured_at": "2026-11-19T08:02:51.995023+00:00",
+        "stage": "inspect_state"
+      }
+    },
+    {
+      "file": "evidence/运行记录/91b7e89eedff45ee981613572867b55f-verify.json",
+      "sha256": "392cdcb972ed069d93cd95dda8aee4dc9b85c078ac6a6f05b660d587d66d0038",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "04",
+        "run_id": "91b7e89eedff45ee981613572867b55f",
+        "captured_at": "2026-11-19T08:02:16.688348+00:00",
+        "stage": "verify"
+      }
+    },
+    {
+      "file": "evidence/运行记录/dadd21b276d8450d800edef1d45d0783-check_student_transaction.json",
+      "sha256": "a30f96e33c10f03dfa1ed7bbfa20e6c9631047619b4ab312a960bee7239eefc5",
+      "_evidence": {
+        "schema_version": 1,
+        "student_id": "2410311411",
+        "experiment_id": "04",
+        "run_id": "dadd21b276d8450d800edef1d45d0783",
+        "captured_at": "2026-11-19T08:02:45.677336+00:00",
+        "stage": "check_student_transaction"
+      }
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "evidence/截图/01-start-identity.png",
+      "sha256": "ef51f87f4d747ad21e2861cb6da5b375e166d6809ee4cd8a76c519a0dc508203"
+    },
+    {
+      "file": "evidence/截图/02-main-replay.png",
+      "sha256": "bd6aa4f8d50987615d658b1d136ea3cc508096971517717fb28d5f2b78c8b9a7"
+    },
+    {
+      "file": "evidence/截图/03-database-inspection.png",
+      "sha256": "50281f7662eba7b07ac2a88eda050e060c7d97b8c7c193d452a8901176245604"
+    },
+    {
+      "file": "evidence/截图/04-student-transaction-pass.png",
+      "sha256": "c58fe02b6d74620d0b9f3e22662e45dcdeef92a3257e58bac6abf903f2fa28bc"
+    },
+    {
+      "file": "evidence/截图/05-final-identity.png",
+      "sha256": "9dd47ffc91fe383b3db7cd8311d63374de224ee92d0f0050ca53a9918816baff"
+    }
+  ],
+  "status": "pending_teacher_screenshot_review",
+  "note": "提交清单仅用于材料预检查，须经授课老师逐张复核后方可验收。"
+}
